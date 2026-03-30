@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://di0gxais156bq"]
+
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="1_ayya1"]
+[ext_resource type="AudioStream" uid="uid://bxge7t10haqi" path="res://assets/ui_sound/kenny_ui_sounds/click_003.ogg" id="2_5ujyh"]
+[ext_resource type="Script" uid="uid://jgbgl2ye1ls0" path="res://scripts/ui/hydra_button.gd" id="2_vl4s1"]
+
+[node name="HydraButton" type="Button" unique_id=116771927]
+theme = ExtResource("1_ayya1")
+text = "K_PLAY"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_vl4s1")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=1976163033]
+stream = ExtResource("2_5ujyh")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

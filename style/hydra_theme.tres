@@ -1,0 +1,38 @@
+[gd_resource type="Theme" format=3 uid="uid://dv2e6pm07a001"]
+
+[ext_resource type="Texture2D" uid="uid://b5ljs08pm4753" path="res://assets/ui/kenny_ui_pack/PNG/Blue/Double/button_rectangle_depth_border.png" id="1_awp2k"]
+[ext_resource type="Texture2D" uid="uid://bv84vqnoslll2" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_rectangle_depth_border.png" id="1_yci5y"]
+[ext_resource type="Texture2D" uid="uid://xhm2c1ila1ic" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_rectangle_depth_line.png" id="3_awp2k"]
+[ext_resource type="FontFile" uid="uid://0svss6xwn6cd" path="res://assets/ui/kenny_ui_pack/Font/Kenney Future.ttf" id="3_pp4k0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awp2k"]
+texture = ExtResource("1_awp2k")
+texture_margin_left = 50.0
+texture_margin_top = 20.0
+texture_margin_right = 50.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yci5y"]
+texture = ExtResource("1_yci5y")
+texture_margin_left = 50.0
+texture_margin_top = 20.0
+texture_margin_right = 50.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pp4k0"]
+texture = ExtResource("3_awp2k")
+texture_margin_left = 50.0
+texture_margin_top = 20.0
+texture_margin_right = 50.0
+texture_margin_bottom = 20.0
+
+[resource]
+default_font = ExtResource("3_pp4k0")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 45
+Button/styles/hover = SubResource("StyleBoxTexture_awp2k")
+Button/styles/normal = SubResource("StyleBoxTexture_yci5y")
+Button/styles/pressed = SubResource("StyleBoxTexture_pp4k0")
+Label/font_sizes/font_size = 45

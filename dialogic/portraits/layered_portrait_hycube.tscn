@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://db5ioagn4vp4f"]
+
+[ext_resource type="Script" uid="uid://cfwf5d8exox4f" path="res://addons/dialogic/Modules/LayeredPortrait/custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Texture2D" uid="uid://bitq7nmelvhw7" path="res://assets/sprites/kenny_shape_characters/Double/green_body_squircle.png" id="2_dw003"]
+[ext_resource type="Texture2D" uid="uid://bcavfdw0nikcq" path="res://assets/sprites/kenny_shape_characters/Double/face_a.png" id="3_48jo0"]
+[ext_resource type="Texture2D" uid="uid://1qlq5gmirch5" path="res://assets/sprites/kenny_shape_characters/Double/green_hand_open.png" id="4_qo1eg"]
+
+[node name="LayeredPortrait" type="CanvasGroup" unique_id=1807495852]
+script = ExtResource("1_uubi5")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1301043119]
+texture = ExtResource("2_dw003")
+
+[node name="Eyes" type="Node2D" parent="." unique_id=2086975722]
+
+[node name="Eyes" type="Sprite2D" parent="Eyes" unique_id=1344885426]
+texture = ExtResource("3_48jo0")
+flip_h = true
+
+[node name="Hands" type="Node2D" parent="." unique_id=600615660]
+
+[node name="Hand1" type="Sprite2D" parent="Hands" unique_id=1024908909]
+position = Vector2(-134, -2)
+texture = ExtResource("4_qo1eg")
+flip_h = true
+
+[node name="Hand2" type="Sprite2D" parent="Hands" unique_id=530595466]
+position = Vector2(134, -2)
+texture = ExtResource("4_qo1eg")
