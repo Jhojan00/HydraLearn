@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://y14wcyptbbl6"]
+
+[ext_resource type="PackedScene" uid="uid://dlcxlle6mmjqy" path="res://scenes/entities/base_npc.tscn" id="1_x6ivy"]
+[ext_resource type="Texture2D" uid="uid://cnash8jvs4ost" path="res://assets/sprites/kenny_shape_characters/Double/pink_body_square.png" id="2_bfxgj"]
+[ext_resource type="Texture2D" uid="uid://uiw0waex7nov" path="res://assets/sprites/kenny_shape_characters/Double/face_g.png" id="3_dywbp"]
+[ext_resource type="Texture2D" uid="uid://8o6861rp5lg1" path="res://assets/sprites/kenny_shape_characters/Double/pink_hand_closed.png" id="4_1seuy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_83ld5"]
+
+[node name="Level1" type="Node2D" unique_id=421277810]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=371591382]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1902136664]
+position = Vector2(804, 1069)
+shape = SubResource("WorldBoundaryShape2D_83ld5")
+
+[node name="BaseNPC" parent="StaticBody2D" unique_id=991048914 instance=ExtResource("1_x6ivy")]
+position = Vector2(1082, 644)
+physics = true
+body_texture = ExtResource("2_bfxgj")
+face_texture = ExtResource("3_dywbp")
+hand_1_texture = ExtResource("4_1seuy")
+hand_2_texture = ExtResource("4_1seuy")
