@@ -15,6 +15,10 @@ run/main_scene="uid://dchlm4wvis2f3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://l6p5lybn2f2x"
+
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
@@ -120,7 +124,7 @@ dialogic_default_action={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation/ui_translation.en.translation", "res://translation/ui_translation.es.translation", "res://translation/dialogic_introduction_translation.en.translation", "res://translation/dialogic_introduction_translation.es.translation", "res://translation/dialogic_character_translations.es.translation", "res://translation/dialogic_character_translations.en.translation", "res://translation/translation.en.translation", "res://translation/translation.es.translation")
+locale/translations=PackedStringArray("res://translation/ui_translation.en.translation", "res://translation/ui_translation.es.translation", "res://translation/dialogic_introduction_translation.en.translation", "res://translation/dialogic_introduction_translation.es.translation", "res://translation/dialogic_character_translations.es.translation", "res://translation/dialogic_character_translations.en.translation")
 locale/test="en"
 
 [physics]

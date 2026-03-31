@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bhssb5x8hkvn3"]
+
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="1_acb0y"]
+[ext_resource type="Script" uid="uid://tkxi3yd2i2rc" path="res://scripts/ui/resolutions_button.gd" id="2_7flnw"]
+[ext_resource type="AudioStream" uid="uid://bbpk82b6wn65o" path="res://assets/ui_sound/kenny_ui_sounds/drop_002.ogg" id="3_66q8p"]
+[ext_resource type="AudioStream" uid="uid://bxge7t10haqi" path="res://assets/ui_sound/kenny_ui_sounds/click_003.ogg" id="3_a5er8"]
+
+[node name="HydraOptionButton" type="OptionButton" unique_id=2033654159]
+theme = ExtResource("1_acb0y")
+script = ExtResource("2_7flnw")
+
+[node name="SelectedSound" type="AudioStreamPlayer" parent="." unique_id=1803425731]
+stream = ExtResource("3_66q8p")
+bus = &"Sounds"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=535247792]
+stream = ExtResource("3_a5er8")
+bus = &"Sounds"
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

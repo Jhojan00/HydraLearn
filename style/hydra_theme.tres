@@ -4,6 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bv84vqnoslll2" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_rectangle_depth_border.png" id="1_yci5y"]
 [ext_resource type="Texture2D" uid="uid://xhm2c1ila1ic" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_rectangle_depth_line.png" id="3_awp2k"]
 [ext_resource type="FontFile" uid="uid://0svss6xwn6cd" path="res://assets/ui/kenny_ui_pack/Font/Kenney Future.ttf" id="3_pp4k0"]
+[ext_resource type="Texture2D" uid="uid://cuc4xg4i0f6yc" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/slide_hangle.png" id="4_5dg8g"]
+[ext_resource type="Texture2D" uid="uid://dfitlhdvkcdta" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/slide_horizontal_color.png" id="5_5dg8g"]
+[ext_resource type="Texture2D" uid="uid://bpqhysliv4q78" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/slide_horizontal_grey.png" id="5_h5p2r"]
+[ext_resource type="Texture2D" uid="uid://cfsv23rnrfqon" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_basic_s_small.png" id="7_028o6"]
+[ext_resource type="Texture2D" uid="uid://byjli48kav014" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/check_round_grey_circle.png" id="8_dma42"]
+[ext_resource type="Texture2D" uid="uid://cno6aehqfite1" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_rectangle_line.png" id="8_xnyiy"]
+[ext_resource type="Texture2D" uid="uid://bvraxxt0buf2l" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/check_round_grey.png" id="9_dma42"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awp2k"]
 texture = ExtResource("1_awp2k")
@@ -26,6 +33,62 @@ texture_margin_top = 20.0
 texture_margin_right = 50.0
 texture_margin_bottom = 20.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5dg8g"]
+load_path = "res://.godot/imported/slide_hangle.png-9b800c2db65cafd6c25325b6287679f3.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_028o6"]
+texture = ExtResource("5_5dg8g")
+texture_margin_left = 30.0
+texture_margin_right = 30.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dg8g"]
+texture = ExtResource("5_h5p2r")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_028o6"]
+load_path = "res://.godot/imported/button_rectangle_depth_border.png-fd44eff6cc9ee03a4c6e60bf33ec0cbd.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnyiy"]
+texture = SubResource("CompressedTexture2D_028o6")
+texture_margin_left = 50.0
+texture_margin_top = 20.0
+texture_margin_right = 50.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfbj5"]
+texture = ExtResource("1_yci5y")
+texture_margin_left = 50.0
+texture_margin_top = 20.0
+texture_margin_right = 50.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xnyiy"]
+load_path = "res://.godot/imported/button_rectangle_depth_border.png-fd44eff6cc9ee03a4c6e60bf33ec0cbd.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dma42"]
+texture = SubResource("CompressedTexture2D_xnyiy")
+texture_margin_left = 50.0
+texture_margin_top = 20.0
+texture_margin_right = 50.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dma42"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e1wu2"]
+texture = ExtResource("8_xnyiy")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
 [resource]
 default_font = ExtResource("3_pp4k0")
 Button/colors/font_color = Color(0, 0, 0, 1)
@@ -35,4 +98,27 @@ Button/font_sizes/font_size = 45
 Button/styles/hover = SubResource("StyleBoxTexture_awp2k")
 Button/styles/normal = SubResource("StyleBoxTexture_yci5y")
 Button/styles/pressed = SubResource("StyleBoxTexture_pp4k0")
+HSlider/icons/grabber = SubResource("CompressedTexture2D_5dg8g")
+HSlider/icons/grabber_disabled = ExtResource("4_5dg8g")
+HSlider/icons/grabber_highlight = ExtResource("4_5dg8g")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_028o6")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_028o6")
+HSlider/styles/slider = SubResource("StyleBoxTexture_5dg8g")
+Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 45
+OptionButton/colors/font_color = Color(0.2447769, 0.24477619, 0.24477634, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+OptionButton/constants/arrow_margin = 20
+OptionButton/font_sizes/font_size = 30
+OptionButton/icons/arrow = ExtResource("7_028o6")
+OptionButton/styles/hover = SubResource("StyleBoxTexture_xnyiy")
+OptionButton/styles/normal = SubResource("StyleBoxTexture_qfbj5")
+OptionButton/styles/pressed = SubResource("StyleBoxTexture_dma42")
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_hover_color = Color(0.24115649, 0.2411559, 0.24115601, 1)
+PopupMenu/font_sizes/font_size = 25
+PopupMenu/icons/radio_checked = ExtResource("8_dma42")
+PopupMenu/icons/radio_unchecked = ExtResource("9_dma42")
+PopupMenu/styles/hover = SubResource("StyleBoxEmpty_dma42")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_e1wu2")

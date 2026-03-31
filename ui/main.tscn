@@ -78,4 +78,5 @@ face_texture = ExtResource("4_h17sc")
 hand_1_texture = ExtResource("5_04ebt")
 hand_2_texture = ExtResource("5_04ebt")
 
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]

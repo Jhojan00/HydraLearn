@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b81du18dg3mrx"]
+
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="1_5aiwo"]
+[ext_resource type="Script" uid="uid://c0potgpabspk1" path="res://scripts/ui/hydra_h_slider.gd" id="2_lda61"]
+[ext_resource type="AudioStream" uid="uid://bxge7t10haqi" path="res://assets/ui_sound/kenny_ui_sounds/click_003.ogg" id="3_nv6s1"]
+
+[node name="HydraHSlider" type="HSlider" unique_id=1053713210]
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.25
+theme = ExtResource("1_5aiwo")
+value = 100.0
+script = ExtResource("2_lda61")
+
+[node name="Moved" type="AudioStreamPlayer" parent="." unique_id=986827161]
+stream = ExtResource("3_nv6s1")
+bus = &"Sounds"
+
+[connection signal="drag_ended" from="." to="." method="_on_drag_ended"]
+[connection signal="drag_started" from="." to="." method="_on_drag_started"]

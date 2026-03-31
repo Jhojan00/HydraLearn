@@ -13,5 +13,6 @@ script = ExtResource("2_vl4s1")
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=1976163033]
 stream = ExtResource("2_5ujyh")
+bus = &"Sounds"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://cjp5pyapkg5py"]
+
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="1_7kwmf"]
+[ext_resource type="Script" uid="uid://c01okscla1s0n" path="res://scripts/ui/settings.gd" id="1_yl6pr"]
+[ext_resource type="Texture2D" uid="uid://bmeoafsdf3giu" path="res://assets/ui/kenny_ui_pack/PNG/Red/Double/button_rectangle_border.png" id="2_pcnwc"]
+[ext_resource type="Texture2D" uid="uid://jsndnb3c6x15" path="res://assets/ui/kenny_ui_pack/PNG/Blue/Double/button_rectangle_border.png" id="3_neoxp"]
+[ext_resource type="Texture2D" uid="uid://ckmyay53uomyq" path="res://assets/ui/kenny_ui_pack/PNG/Yellow/Double/button_rectangle_border.png" id="4_yl6pr"]
+[ext_resource type="PackedScene" uid="uid://bhssb5x8hkvn3" path="res://ui/hydra_option_button.tscn" id="5_045ga"]
+[ext_resource type="PackedScene" uid="uid://b81du18dg3mrx" path="res://ui/hydra_h_slider.tscn" id="6_evr87"]
+[ext_resource type="Texture2D" uid="uid://m4tkspbu73mi" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_e.png" id="8_jxi54"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_feasd"]
+texture = ExtResource("2_pcnwc")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evr87"]
+texture = ExtResource("3_neoxp")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_045ga"]
+texture = ExtResource("4_yl6pr")
+texture_margin_left = 20.0
+texture_margin_top = 10.0
+texture_margin_right = 20.0
+texture_margin_bottom = 10.0
+
+[node name="Settings" type="Control" unique_id=130267083]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yl6pr")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1692377323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85490197, 0.8627451, 0.90588236, 1)
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="." unique_id=388106566]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -297.5
+offset_top = 119.0
+offset_right = 297.5
+offset_bottom = 220.0
+grow_horizontal = 2
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxTexture_feasd")
+text = "K_SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1096237776]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.35000002
+anchor_right = 1.0
+anchor_bottom = 0.91800004
+offset_left = 84.0
+offset_top = -3.0517578e-05
+offset_right = -84.0
+offset_bottom = -73.44006
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+
+[node name="ConfigVideo" type="VBoxContainer" parent="HBoxContainer" unique_id=1615582314]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VideoTitle" type="Label" parent="HBoxContainer/ConfigVideo" unique_id=1022868370]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_evr87")
+text = "K_VIDEO"
+vertical_alignment = 1
+
+[node name="Container" type="NinePatchRect" parent="HBoxContainer/ConfigVideo" unique_id=2071363411]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_neoxp")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ConfigVideo/Container" unique_id=1498646407]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigVideo/Container/MarginContainer" unique_id=1100773514]
+layout_mode = 2
+
+[node name="Resolution" type="HBoxContainer" parent="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer" unique_id=979339870]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution" unique_id=1570130474]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 25
+text = "K_RESOLUTION"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="ResolutionsButton" parent="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution" unique_id=2033654159 instance=ExtResource("5_045ga")]
+layout_mode = 2
+
+[node name="ConfigAudio" type="VBoxContainer" parent="HBoxContainer" unique_id=1409686005]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="AutioTitle" type="Label" parent="HBoxContainer/ConfigAudio" unique_id=305441853]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_045ga")
+text = "K_AUDIO"
+vertical_alignment = 1
+
+[node name="Container" type="NinePatchRect" parent="HBoxContainer/ConfigAudio" unique_id=1839476450]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_yl6pr")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ConfigAudio/Container" unique_id=396611527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer" unique_id=342504484]
+layout_mode = 2
+
+[node name="MasterAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer" unique_id=544836081]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio" unique_id=132813102]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 25
+text = "K_MASTER_VOLUME"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="MasterAudioSlider" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio" unique_id=1053713210 instance=ExtResource("6_evr87")]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SoundsAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer" unique_id=1508994732]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio" unique_id=1368775570]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 25
+text = "K_SOUNDS_VOLUME"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="SoundsAudioSlider" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio" unique_id=2139714044 instance=ExtResource("6_evr87")]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer" unique_id=711245586]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MusicAudio" unique_id=1392397255]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 25
+text = "K_MUSIC_VOLUME"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="MusicAudioSlider" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MusicAudio" unique_id=1307594028 instance=ExtResource("6_evr87")]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Back" type="TextureButton" parent="." unique_id=1496344463]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -109.0
+offset_right = -69.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("8_jxi54")
+
+[connection signal="item_selected" from="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution/ResolutionsButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio/MasterAudioSlider" to="." method="_on_master_audio_slider_value_changed"]
+[connection signal="drag_started" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio/SoundsAudioSlider" to="." method="_on_hydra_h_slider_drag_started"]
+[connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio/SoundsAudioSlider" to="." method="_on_sounds_audio_slider_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MusicAudio/MusicAudioSlider" to="." method="_on_music_audio_slider_value_changed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

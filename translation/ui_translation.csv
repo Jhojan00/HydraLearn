@@ -3,3 +3,9 @@ K_PLAY,Play,Jugar
 K_SETTINGS,Settings,Configuración
 K_QUIT,Quit,Salir
 K_HYDRALEARN,HydraLearn,HydraLearn
+K_VIDEO,Video,Video
+K_AUDIO,Audio,Audio
+K_MASTER_VOLUME,Master Volume,Volumen General
+K_SOUNDS_VOLUME,Sounds Volume,Volumen de Efectos
+K_MUSIC_VOLUME,Music Volume,Volumen de Música
+K_RESOLUTION,Resolution,Resolución
