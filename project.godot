@@ -25,12 +25,8 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={
-"Hycube": "res://dialogic/characters/Hycube.dch"
-}
-directories/dtl_directory={
-"introduction": "res://dialogic/timelines/introduction.dtl"
-}
+directories/dch_directory={}
+directories/dtl_directory={}
 layout/style_directory={
 "": "res://dialogic/styles/hydra_style.tres",
 "hydra_style": "res://dialogic/styles/hydra_style.tres"
