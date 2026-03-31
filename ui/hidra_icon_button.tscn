@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://tmdhu63uvh4r"]
+
+[ext_resource type="Texture2D" uid="uid://m4tkspbu73mi" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_e.png" id="1_iklvi"]
+[ext_resource type="Script" uid="uid://cfrnqgchtx6oa" path="res://scripts/ui/hidra_icon_button.gd" id="2_80qvq"]
+[ext_resource type="AudioStream" uid="uid://bxge7t10haqi" path="res://assets/ui_sound/kenny_ui_sounds/click_003.ogg" id="3_gnrkg"]
+
+[node name="HidraIconButton" type="TextureButton" unique_id=1477110048]
+offset_right = 64.0
+offset_bottom = 64.0
+texture_normal = ExtResource("1_iklvi")
+script = ExtResource("2_80qvq")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=1015274228]
+stream = ExtResource("3_gnrkg")
+bus = &"Sounds"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -13,3 +13,8 @@ URL: https://kenney.nl/assets/ui-pack
 Creator: Kenny
 Assets Name: Interface Sounds
 URL: https://kenney.nl/assets/interface-sounds
+
+## Flags (Translation Icons)
+Creator: Dafluffypotato
+Assets Name: Pixel Country Flags - 15x10
+URL: https://dafluffypotato.itch.io/pixel-country-flags

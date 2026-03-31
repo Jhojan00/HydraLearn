@@ -33,7 +33,7 @@ func select_resolution():
 
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("uid://dchlm4wvis2f3")
+	SceneManager.change_scene("uid://dchlm4wvis2f3")
 
 
 func _on_master_audio_slider_value_changed(value: float) -> void:

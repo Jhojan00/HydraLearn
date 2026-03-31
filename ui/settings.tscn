@@ -7,7 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ckmyay53uomyq" path="res://assets/ui/kenny_ui_pack/PNG/Yellow/Double/button_rectangle_border.png" id="4_yl6pr"]
 [ext_resource type="PackedScene" uid="uid://bhssb5x8hkvn3" path="res://ui/hydra_option_button.tscn" id="5_045ga"]
 [ext_resource type="PackedScene" uid="uid://b81du18dg3mrx" path="res://ui/hydra_h_slider.tscn" id="6_evr87"]
-[ext_resource type="Texture2D" uid="uid://m4tkspbu73mi" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_e.png" id="8_jxi54"]
+[ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="8_jxi54"]
+[ext_resource type="Texture2D" uid="uid://c2d207dnin7x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_n.png" id="9_bqqix"]
+[ext_resource type="Texture2D" uid="uid://bqasbkht6elr" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n.png" id="10_b4akq"]
+[ext_resource type="PackedScene" uid="uid://bdjn38snh8a6v" path="res://ui/language_switcher.tscn" id="11_b4akq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_feasd"]
 texture = ExtResource("2_pcnwc")
@@ -74,7 +77,7 @@ anchor_bottom = 0.91800004
 offset_left = 84.0
 offset_top = -3.0517578e-05
 offset_right = -84.0
-offset_bottom = -73.44006
+offset_bottom = -137.44006
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 70
@@ -225,20 +228,32 @@ max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="Back" type="TextureButton" parent="." unique_id=1496344463]
+[node name="Back" parent="." unique_id=1477110048 instance=ExtResource("8_jxi54")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -109.0
-offset_right = -69.0
-offset_bottom = -45.0
+offset_left = -108.0
+offset_top = -105.0
+offset_right = -44.0
+offset_bottom = -41.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("8_jxi54")
+texture_normal = ExtResource("9_bqqix")
+texture_pressed = ExtResource("10_b4akq")
+
+[node name="LanguageSwitcher" parent="." unique_id=1641790850 instance=ExtResource("11_b4akq")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = -147.0
+offset_right = 326.0
+offset_bottom = -47.0
+grow_vertical = 0
 
 [connection signal="item_selected" from="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution/ResolutionsButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio/MasterAudioSlider" to="." method="_on_master_audio_slider_value_changed"]

@@ -9,4 +9,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file.call_deferred("uid://cjp5pyapkg5py")
+	SceneManager.change_scene("uid://cjp5pyapkg5py")
+
+
+func _on_play_pressed() -> void:
+	SceneManager.change_scene("uid://bojbxy80uap6s")

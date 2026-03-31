@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bojbxy80uap6s"]
+
+[ext_resource type="Script" uid="uid://b3o41de7wtgpe" path="res://scripts/ui/level_selector.gd" id="1_o75l3"]
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="1_wljwa"]
+[ext_resource type="FontFile" uid="uid://jqe0wgi8lgc2" path="res://assets/ui/kenny_ui_pack/Font/Kenney Future Narrow.ttf" id="2_o75l3"]
+[ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="3_ga40o"]
+[ext_resource type="Texture2D" uid="uid://bd8smlhsew76x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_w.png" id="4_xcho0"]
+[ext_resource type="Texture2D" uid="uid://ddnvwtafifnak" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_w.png" id="5_y3hoh"]
+[ext_resource type="Texture2D" uid="uid://bayjh78k8rh4h" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_e.png" id="6_w7mh7"]
+[ext_resource type="Texture2D" uid="uid://c2d207dnin7x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_n.png" id="7_wqwhr"]
+[ext_resource type="Texture2D" uid="uid://bqasbkht6elr" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n.png" id="8_pknqb"]
+[ext_resource type="PackedScene" uid="uid://d4csukjf0c5x5" path="res://ui/level_switcher.tscn" id="10_ga40o"]
+[ext_resource type="Texture2D" uid="uid://gdp0shq0c02o" path="res://assets/ui/kenny_ui_pack/PNG/Red/Double/button_square_line.png" id="11_xcho0"]
+
+[node name="LevelSelector" type="Control" unique_id=2056442581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o75l3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1673833098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.85490197, 0.8627451, 0.90588236, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1588094732]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -501.0
+offset_top = 126.0
+offset_right = 501.0
+offset_bottom = 239.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_wljwa")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o75l3")
+theme_override_font_sizes/font_size = 100
+text = "K_LEVELS"
+horizontal_alignment = 1
+
+[node name="Left" parent="." unique_id=721183148 instance=ExtResource("3_ga40o")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -32.0
+offset_right = 124.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("4_xcho0")
+texture_pressed = ExtResource("5_y3hoh")
+
+[node name="Right" parent="." unique_id=1629496916 instance=ExtResource("3_ga40o")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -32.0
+offset_right = -56.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_pressed = ExtResource("6_w7mh7")
+
+[node name="Back" parent="." unique_id=1477110048 instance=ExtResource("3_ga40o")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -105.0
+offset_right = -44.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_wqwhr")
+texture_pressed = ExtResource("8_pknqb")
+
+[node name="LevelSwitcher" parent="." unique_id=973965155 instance=ExtResource("10_ga40o")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -676.0
+offset_top = -187.0
+offset_right = 676.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+selected = ExtResource("11_xcho0")
+
+[connection signal="pressed" from="Left" to="LevelSwitcher" method="left"]
+[connection signal="pressed" from="Right" to="LevelSwitcher" method="right"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

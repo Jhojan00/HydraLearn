@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bdjn38snh8a6v"]
+
+[ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="1_q2pji"]
+[ext_resource type="Script" uid="uid://dv012ysjjbi3x" path="res://scripts/ui/language_switcher.gd" id="1_vc3su"]
+[ext_resource type="Texture2D" uid="uid://bd8smlhsew76x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_w.png" id="2_jxs1i"]
+[ext_resource type="Texture2D" uid="uid://ce853fuvlluf" path="res://assets/flags/us.png" id="3_k0yvr"]
+[ext_resource type="Texture2D" uid="uid://ddnvwtafifnak" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_w.png" id="3_vc3su"]
+[ext_resource type="Texture2D" uid="uid://147raxarcrug" path="res://assets/flags/co.png" id="4_jxs1i"]
+[ext_resource type="Texture2D" uid="uid://bayjh78k8rh4h" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_e.png" id="5_k0yvr"]
+
+[node name="LanguageSwitcher" type="HBoxContainer" unique_id=1641790850]
+offset_right = 132.0
+offset_bottom = 64.0
+theme_override_constants/separation = 26
+script = ExtResource("1_vc3su")
+aviable_languages = Dictionary[String, Texture2D]({
+"en": ExtResource("3_k0yvr"),
+"es": ExtResource("4_jxs1i")
+})
+
+[node name="Left" parent="." unique_id=1477110048 instance=ExtResource("1_q2pji")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_jxs1i")
+texture_pressed = ExtResource("3_vc3su")
+
+[node name="Flag" type="TextureRect" parent="." unique_id=909487409]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("4_jxs1i")
+stretch_mode = 5
+
+[node name="Right" parent="." unique_id=1588702839 instance=ExtResource("1_q2pji")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_pressed = ExtResource("5_k0yvr")
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
