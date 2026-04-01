@@ -14,7 +14,7 @@ Creator: Kenny
 Assets Name: Interface Sounds
 URL: https://kenney.nl/assets/interface-sounds
 
-## Flags (Translation Icons)
+## Flags
 Creator: Dafluffypotato
 Assets Name: Pixel Country Flags - 15x10
 URL: https://dafluffypotato.itch.io/pixel-country-flags

@@ -1,8 +1,11 @@
 extends PanelContainer
 
+@onready var switcher: Switcher = $Switcher # HACK -> Change this logic to a switcher :)
+
 @export var containers : Array[PanelContainer] = []
 @export var unselected: Texture2D
 @export var selected: Texture2D
+
 
 
 var selected_idx:int = 0
@@ -21,8 +24,6 @@ func right():
 		
 		unselect(containers[selected_idx-1])
 		select(containers[selected_idx])
-
-
 
 func left():
 	if selected_idx - 1 > -1:

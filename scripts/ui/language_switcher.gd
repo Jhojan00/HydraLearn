@@ -1,29 +1,29 @@
 extends HBoxContainer
 
-@export var aviable_languages: Dictionary[String, Texture2D] = {}
-
+@onready var switcher: Switcher = $Switcher
 @onready var flag: TextureRect = $Flag
 
-var selected_idx = 0
+var languages_textures : Dictionary[String, Texture2D] = {
+	"en" : preload("uid://ce853fuvlluf"),
+	"es" : preload("uid://147raxarcrug")
+}
+var system_language = TranslationServer.get_locale()
+
 
 func _ready() -> void:
-	select_language()
+	switcher.content = languages_textures.keys()
+	switcher.custom_select_item(system_language)
+	
+	update_language()
 
 func _on_right_pressed() -> void:
-	if selected_idx + 1 < len(aviable_languages):
-		selected_idx += 1
-		flag.texture = aviable_languages.values()[selected_idx]
-		TranslationServer.set_locale(aviable_languages.keys()[selected_idx])
-		
+	switcher.right()
+	update_language()
 
 func _on_left_pressed() -> void:
-	if selected_idx - 1 > -1:
-		selected_idx -= 1
-		flag.texture = aviable_languages.values()[selected_idx]
-		TranslationServer.set_locale(aviable_languages.keys()[selected_idx])
-		
-		
-func select_language(lang: String = TranslationServer.get_locale()):
-	if lang in aviable_languages:
-		TranslationServer.set_locale(lang)
-		flag.texture = aviable_languages[lang]
+	switcher.left()
+	update_language()
+	
+func update_language():
+	flag.texture = languages_textures.values()[switcher.idx]
+	TranslationServer.set_locale(switcher.get_item())

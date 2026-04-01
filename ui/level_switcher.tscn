@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bro1fuek8df1o" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/button_square_line.png" id="1_kuhxd"]
 [ext_resource type="Texture2D" uid="uid://b845w1wpn48k6" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_square_line.png" id="3_oy0up"]
 [ext_resource type="Texture2D" uid="uid://358wlwlhvdv" path="res://assets/ui/kenny_ui_pack/PNG/Blue/Double/button_square_line.png" id="4_btsip"]
+[ext_resource type="Script" uid="uid://b4ijw4dk5brix" path="res://components/switcher.gd" id="5_xp7cm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy0up"]
 texture = ExtResource("1_kuhxd")
@@ -72,3 +73,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_6dtqd")
+
+[node name="Switcher" type="Node" parent="." unique_id=621001703]
+script = ExtResource("5_xp7cm")
+metadata/_custom_type_script = "uid://b4ijw4dk5brix"
