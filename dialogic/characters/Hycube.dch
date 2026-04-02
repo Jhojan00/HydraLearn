@@ -17,6 +17,24 @@
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Hycube Angry": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.1,
+"scene": "res://dialogic/portraits/layered_portrait_hycube_angry.tscn"
+},
+"Hycube Creido": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.1,
+"scene": "res://dialogic/portraits/layered_portrait_hycube_creido.tscn"
+},
 "Hycube Happy": {
 "export_overrides": {
 "image": "\"res://assets/sprites/kenny_shape_characters/Double/green_body_squircle.png\""
@@ -26,6 +44,24 @@
 "offset": Vector2(0, 0),
 "scale": 0.1,
 "scene": "res://dialogic/portraits/layered_portrait_hycube.tscn"
+},
+"Hycube Normal": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.1,
+"scene": "res://dialogic/portraits/layered_portrait_hycube_normal.tscn"
+},
+"Hycube Sonrisa": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.1,
+"scene": "res://dialogic/portraits/layered_portrait_hycube_sonrisa.tscn"
 }
 },
 &"scale": 1.0

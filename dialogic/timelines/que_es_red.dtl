@@ -1,0 +1,52 @@
+join Hycube left [animation="Slide In Down"]
+Hycube: Para arrancar vamos a entender los conceptos básicos. #id:15
+Hycube: Comencemos con una red\: es un sistema el cual permite conectar todos los dispositivos para que puedan compartir información entre si. #id:16
+update Hycube (Hycube Happy)
+Hycube: Para hacerlo más fácil, una red es cuando pasamos fotos por whatsapp? Responde V/F. #id:17
+[text_input text="Ingresa tu respuesta:" var="OPT.option" placeholder="V/F"] #id:18
+if {OPT.option} == "V":
+audio "res://assets/ui_sound/sfx/correcto.ogg" [volume="0.0"]
+if {OPT.option} == "V":
+	audio "res://assets/ui_sound/sfx/correcto.ogg" [volume="0.0"]
+	Hycube (Hycube Creido): Muy bien! #id:19
+	[wait time="2.0"]
+elif {OPT.option} == "F":
+	audio "res://assets/ui_sound/sfx/incorrecto.ogg" [volume="-20.0"]
+	Hycube (Hycube Normal): Definitivamente esa no es la respuesta. #id:1a
+	[wait time="2.0"]
+elif {OPT.option} == "f":
+	audio "res://assets/ui_sound/sfx/incorrecto.ogg" [volume="-20.0"]
+	Hycube (Hycube Normal): Definitivamente esa no es la respuesta. #id:1b
+	[wait time="2.0"]
+elif {OPT.option} == "v":
+	audio "res://assets/ui_sound/sfx/correcto.ogg" [volume="0.0"]
+	Hycube (Hycube Creido): Muy bien! #id:1c
+	[wait time="2.0"]
+elif {OPT.option} == "VERDADERO":
+	audio "res://assets/ui_sound/sfx/correcto.ogg" [volume="0.0"]
+	Hycube (Hycube Creido): Muy bien! #id:1d
+	[wait time="2.0"]
+elif {OPT.option} == "verdadero":
+	audio "res://assets/ui_sound/sfx/correcto.ogg" [volume="0.0"]
+	Hycube (Hycube Creido): Muy bien! #id:1e
+	[wait time="2.0"]
+elif {OPT.option} == "FALSO":
+	audio "res://assets/ui_sound/sfx/incorrecto.ogg" [volume="-20.0"]
+	Hycube (Hycube Normal): Definitivamente esa no es la respuesta. #id:1f
+	[wait time="2.0"]
+elif {OPT.option} == "falso":
+	audio "res://assets/ui_sound/sfx/incorrecto.ogg" [volume="-20.0"]
+	Hycube (Hycube Normal): Definitivamente esa no es la respuesta. #id:20
+	[wait time="2.0"]
+else:
+	Hycube: Creíste que ibas a romper el programa? JAJA #id:21
+	update Hycube (Hycube Sonrisa)
+	[wait time="2.0"]
+	jump que_es_red/
+Hycube (Hycube Happy): Ahora repasaremos los siguientes conceptos\: Dispositivo, Link, Puerto y Paquete, ¿Pero qué es un dispositivo? #id:22
+Hycube (Hycube Sonrisa): Es cualquier cosa que se conecta a la red\: una PC, un celular, una impresora. En HydraLearn los verás como íconos que pones en el escenario. #id:23
+Hycube: Un link es el "tubo" o cable que une dos dispositivos. En HydraLearn es literalmente una línea entre dos íconos. Sin link, los dispositivos son vecinos que ni se saludan. #id:24
+Hycube (Hycube Creido): El puerto es el hueco donde se conecta el cable, cada dispositivo tiene uno o varios. Es como la ranura donde metes el enchufe. Sin puerto no hay conexión posible. #id:25
+Hycube (Hycube Sonrisa): Y el paquete es por así decirlo la "nota" que viaja por la red, la información se divide en pequeños paquetes que viajan por separado. #id:26
+Hycube (Hycube Creido): Y al llegar al dispositivo destino se vuelven a unir. #id:27
+[wait time="2.0"]

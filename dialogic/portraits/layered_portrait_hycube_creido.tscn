@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bt5x2kgy6hgks"]
+
+[ext_resource type="Script" uid="uid://cfwf5d8exox4f" path="res://addons/dialogic/Modules/LayeredPortrait/custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="PackedScene" uid="uid://dlcxlle6mmjqy" path="res://scenes/entities/base_npc.tscn" id="2_3yu72"]
+[ext_resource type="Texture2D" uid="uid://bitq7nmelvhw7" path="res://assets/sprites/kenny_shape_characters/Double/green_body_squircle.png" id="3_o5ox3"]
+[ext_resource type="Texture2D" uid="uid://bts5lu4i3hikj" path="res://assets/sprites/kenny_shape_characters/Double/face_h.png" id="4_gq5gp"]
+[ext_resource type="Texture2D" uid="uid://cg1gigytyfu50" path="res://assets/sprites/kenny_shape_characters/Double/green_hand_point.png" id="5_cw6r8"]
+[ext_resource type="Texture2D" uid="uid://1qlq5gmirch5" path="res://assets/sprites/kenny_shape_characters/Double/green_hand_open.png" id="6_pxpda"]
+
+[node name="LayeredPortrait" type="CanvasGroup" unique_id=1819050333]
+script = ExtResource("1_uubi5")
+
+[node name="BaseNPC" parent="." unique_id=991048914 instance=ExtResource("2_3yu72")]
+position = Vector2(-1, 0)
+body_texture = ExtResource("3_o5ox3")
+face_texture = ExtResource("4_gq5gp")
+hand_1_texture = ExtResource("6_pxpda")
+hand_2_texture = ExtResource("5_cw6r8")

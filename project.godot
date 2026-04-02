@@ -31,7 +31,8 @@ directories/dch_directory={
 "Hycube": "res://dialogic/characters/Hycube.dch"
 }
 directories/dtl_directory={
-"introduction": "res://dialogic/timelines/introduction.dtl"
+"introduction": "res://dialogic/timelines/introduction.dtl",
+"que_es_red": "res://dialogic/timelines/que_es_red.dtl"
 }
 layout/style_directory={
 "": "res://dialogic/styles/hydra_style.tres",
@@ -73,7 +74,11 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"OPT": {
+"option": ""
+}
+}
 translation/enabled=true
 translation/original_locale=""
 translation/file_mode=1
@@ -83,7 +88,7 @@ translation/add_separator=true
 translation/intern/save_mode=0
 translation/intern/file_mode=1
 translation/intern/translation_folder="res://translation"
-translation/id_counter=20
+translation/id_counter=39
 translation/locales=[]
 
 [display]
