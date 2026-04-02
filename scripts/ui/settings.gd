@@ -18,7 +18,7 @@ func _ready() -> void:
 func _on_option_button_item_selected(index: int) -> void:
 	DisplayServer.window_set_size(resolutions_button.get_item_metadata(index))
 
-func select_resolution():
+func select_resolution(): # TODO: Improve options buttons and sliders to handle the logic themselves.
 	for idx in len(resolutions):
 		var res = resolutions[idx]
 		var label = str(res.x) + "x" + str(res.y)

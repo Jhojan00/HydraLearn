@@ -23,11 +23,12 @@ func start_sending():
 	waiting = true
 	while waiting_queue:
 		var request = waiting_queue.pop_front()
-		var from_port = request["from_port"]
-		var packet = request["packet"]
+		var from_port: Port = request["from_port"]
+		var packet: Packet = request["packet"].duplicate()
 		var target_port: Port = null
 		
 		await get_tree().create_timer(latency).timeout
+		
 		
 		if randf() < loss_probability:
 			packet_lost.emit(packet)
@@ -42,6 +43,10 @@ func start_sending():
 			push_warning("Port not found, check if both ports are connected.")
 			
 		if target_port != null:
-			target_port.receive_packet(packet)
-			packet_sent.emit(packet)
+			packet.ttl -= 1
+			if packet.ttl <= 0:
+				packet_lost.emit(packet)
+			else:
+				target_port.receive_packet(packet)
+				packet_sent.emit(packet)
 	waiting = false
