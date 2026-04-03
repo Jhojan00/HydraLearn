@@ -4,7 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://bro1fuek8df1o" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/button_square_line.png" id="1_kuhxd"]
 [ext_resource type="Texture2D" uid="uid://b845w1wpn48k6" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_square_line.png" id="3_oy0up"]
 [ext_resource type="Texture2D" uid="uid://358wlwlhvdv" path="res://assets/ui/kenny_ui_pack/PNG/Blue/Double/button_square_line.png" id="4_btsip"]
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="5_6dtqd"]
 [ext_resource type="Script" uid="uid://b4ijw4dk5brix" path="res://components/switcher.gd" id="5_xp7cm"]
+[ext_resource type="PackedScene" uid="uid://dlcxlle6mmjqy" path="res://scenes/entities/base_npc.tscn" id="6_g5sux"]
+[ext_resource type="Texture2D" uid="uid://bitq7nmelvhw7" path="res://assets/sprites/kenny_shape_characters/Double/green_body_squircle.png" id="7_othpn"]
+[ext_resource type="Texture2D" uid="uid://cubfa0hao2qts" path="res://assets/cute_icons/my puter.png" id="7_u5y7t"]
+[ext_resource type="Texture2D" uid="uid://d4faysgfj0k2o" path="res://assets/cute_icons/games-03.png" id="8_el5li"]
+[ext_resource type="Texture2D" uid="uid://bcavfdw0nikcq" path="res://assets/sprites/kenny_shape_characters/Double/face_a.png" id="8_td54r"]
+[ext_resource type="Texture2D" uid="uid://da7e8xy0xdhmp" path="res://assets/cute_icons/mail-01.png" id="9_nosbi"]
+[ext_resource type="Texture2D" uid="uid://1qlq5gmirch5" path="res://assets/sprites/kenny_shape_characters/Double/green_hand_open.png" id="9_obs3r"]
+[ext_resource type="Texture2D" uid="uid://deur3yp14b488" path="res://assets/sprites/kenny_shape_characters/Double/yellow_body_rhombus.png" id="11_fjaow"]
+[ext_resource type="Texture2D" uid="uid://balq5h5cmbjmc" path="res://assets/sprites/kenny_shape_characters/Double/face_e.png" id="12_im2kl"]
+[ext_resource type="Texture2D" uid="uid://cr745huwtdla8" path="res://assets/sprites/kenny_shape_characters/Double/hand_yellow_peace.png" id="13_kxwgv"]
+[ext_resource type="Texture2D" uid="uid://dcc1sba06umtb" path="res://assets/sprites/kenny_shape_characters/Double/hand_yellow_point.png" id="14_klsg3"]
+[ext_resource type="Texture2D" uid="uid://do757kaswfedb" path="res://assets/sprites/kenny_shape_characters/Double/red_body_circle.png" id="16_td54r"]
+[ext_resource type="Texture2D" uid="uid://r4dbvqsp2p80" path="res://assets/sprites/kenny_shape_characters/Double/face_f.png" id="17_rvilq"]
+[ext_resource type="Texture2D" uid="uid://cdf8afehvolnr" path="res://assets/sprites/kenny_shape_characters/Double/red_hand_rock.png" id="18_un8qb"]
+[ext_resource type="Texture2D" uid="uid://d3bxufbtg1omo" path="res://assets/sprites/kenny_shape_characters/Double/red_hand_closed.png" id="19_1uab7"]
+[ext_resource type="PackedScene" uid="uid://di0gxais156bq" path="res://ui/hydra_button.tscn" id="21_rvilq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oy0up"]
 texture = ExtResource("1_kuhxd")
@@ -19,6 +36,9 @@ texture_margin_left = 15.0
 texture_margin_top = 15.0
 texture_margin_right = 15.0
 texture_margin_bottom = 15.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_puux6"]
+load_path = "res://.godot/imported/green_hand_open.png-44e1da829361cefe914dee77465cd327.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xp7cm"]
 texture = ExtResource("3_oy0up")
@@ -39,7 +59,7 @@ offset_right = 1352.0
 offset_bottom = 374.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oy0up")
 script = ExtResource("1_2p7px")
-containers = [NodePath("MarginContainer/HBoxContainer/Container1"), NodePath("MarginContainer/HBoxContainer/Container2"), NodePath("MarginContainer/HBoxContainer/Container3")]
+containers = [NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container1"), NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container2"), NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container3")]
 unselected = ExtResource("3_oy0up")
 selected = ExtResource("4_btsip")
 
@@ -50,30 +70,153 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1780701976]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1295516627]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1780701976]
+custom_minimum_size = Vector2(0, 350)
 layout_mode = 2
 
-[node name="Container1" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=2015665155]
+[node name="Container1" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2015665155]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_btsip")
+metadata/character = NodePath("MarginContainer/VBoxContainer/Hycube")
 
-[node name="Container2" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=1608688600]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Container1" unique_id=2114310222]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Container1/MarginContainer" unique_id=1570475043]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Container1/MarginContainer/VBoxContainer" unique_id=1445068832]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("5_6dtqd")
+text = "K_LEVEL_1"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Hycube" parent="MarginContainer/VBoxContainer/HBoxContainer/Container1/MarginContainer/VBoxContainer" unique_id=991048914 instance=ExtResource("6_g5sux")]
+position = Vector2(126, 151)
+scale = Vector2(0.65, 0.65)
+start_animation = "yes"
+body_texture = ExtResource("7_othpn")
+face_texture = ExtResource("8_td54r")
+hand_1_texture = ExtResource("9_obs3r")
+hand_2_texture = SubResource("CompressedTexture2D_puux6")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Container1/MarginContainer/VBoxContainer" unique_id=400866522]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+texture = ExtResource("7_u5y7t")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Container2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1608688600]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_xp7cm")
+metadata/character = NodePath("MarginContainer/VBoxContainer/HycubeMedium")
 
-[node name="Container3" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=1675405974]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Container2" unique_id=1914575900]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Container2/MarginContainer" unique_id=734159714]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Container2/MarginContainer/VBoxContainer" unique_id=821963465]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("5_6dtqd")
+text = "K_LEVEL_2"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="HycubeMedium" parent="MarginContainer/VBoxContainer/HBoxContainer/Container2/MarginContainer/VBoxContainer" unique_id=1538258474 instance=ExtResource("6_g5sux")]
+position = Vector2(126, 152)
+scale = Vector2(0.65, 0.65)
+body_texture = ExtResource("11_fjaow")
+face_texture = ExtResource("12_im2kl")
+hand_1_texture = ExtResource("13_kxwgv")
+hand_2_texture = ExtResource("14_klsg3")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Container2/MarginContainer/VBoxContainer" unique_id=1416619152]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+texture = ExtResource("8_el5li")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Container3" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1675405974]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_6dtqd")
+metadata/character = NodePath("MarginContainer/VBoxContainer/HycubeHard")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Container3" unique_id=1981652047]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Container3/MarginContainer" unique_id=1901714886]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Container3/MarginContainer/VBoxContainer" unique_id=1468551624]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("5_6dtqd")
+text = "K_LEVEL_3"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="HycubeHard" parent="MarginContainer/VBoxContainer/HBoxContainer/Container3/MarginContainer/VBoxContainer" unique_id=885279553 instance=ExtResource("6_g5sux")]
+position = Vector2(130, 153)
+scale = Vector2(0.65, 0.65)
+body_texture = ExtResource("16_td54r")
+face_texture = ExtResource("17_rvilq")
+hand_1_texture = ExtResource("18_un8qb")
+hand_2_texture = ExtResource("19_1uab7")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Container3/MarginContainer/VBoxContainer" unique_id=1553345447]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+texture = ExtResource("9_nosbi")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Play" parent="MarginContainer/VBoxContainer" unique_id=116771927 instance=ExtResource("21_rvilq")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Switcher" type="Node" parent="." unique_id=621001703]
 script = ExtResource("5_xp7cm")
 metadata/_custom_type_script = "uid://b4ijw4dk5brix"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

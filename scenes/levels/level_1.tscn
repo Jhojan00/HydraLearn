@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bp5rqfllau2l3"]
 
-[ext_resource type="Script" uid="uid://lssewmce2q1" path="res://scripts/Levels/level_1.gd" id="1_sfsn2"]
+[ext_resource type="Script" uid="uid://lssewmce2q1" path="res://scripts/Levels/level_1.gd" id="1_ksju7"]
 
 [node name="Level1" type="Control" unique_id=37371610]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sfsn2")
+script = ExtResource("1_ksju7")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1084821892]
 layout_mode = 1
@@ -18,5 +18,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.8352941, 0.5686275, 0.89411765, 1)
+color = Color(0.85490197, 0.8627451, 0.90588236, 1)
 metadata/_edit_lock_ = true

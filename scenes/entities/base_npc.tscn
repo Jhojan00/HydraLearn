@@ -160,10 +160,39 @@ tracks/5/keys = {
 "values": [Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_dfiwu"]
+resource_name = "yes"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(134, -2), Vector2(134, -120), Vector2(134, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_55y7s"]
 _data = {
 &"RESET": SubResource("Animation_55y7s"),
-&"greet": SubResource("Animation_f6btl")
+&"greet": SubResource("Animation_f6btl"),
+&"yes": SubResource("Animation_dfiwu")
 }
 
 [node name="BaseNPC" type="CharacterBody2D" unique_id=991048914]
@@ -190,4 +219,3 @@ texture = ExtResource("5_55y7s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=140416963]
 libraries/ = SubResource("AnimationLibrary_55y7s")
-autoplay = &"greet"

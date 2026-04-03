@@ -6,13 +6,18 @@ extends PanelContainer
 @export var unselected: Texture2D
 @export var selected: Texture2D
 
-
-
 var selected_idx:int = 0
+var levels = [
+	"uid://bp5rqfllau2l3",
+]
 
 func select(container:PanelContainer):
 	container.size_flags_vertical = Control.SIZE_FILL
 	container.get("theme_override_styles/panel").texture = selected
+	
+	var character = container.get_node(container.get_meta("character"))
+	
+	character.play("yes")
 	
 func unselect(container:PanelContainer):
 	container.size_flags_vertical = Control.SIZE_SHRINK_CENTER
@@ -38,6 +43,17 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("right"):
 		right()
+		get_viewport().set_input_as_handled()
 			
 	elif event.is_action_pressed("left"):
 		left()
+		get_viewport().set_input_as_handled()
+
+
+func _on_play_pressed() -> void:
+	var level = levels.get(selected_idx)
+	if level:
+		SceneManager.change_scene(level)
+	else:
+		push_warning("There is no level for idx:%d yet!" % selected_idx)
+	

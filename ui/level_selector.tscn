@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bqasbkht6elr" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n.png" id="8_pknqb"]
 [ext_resource type="PackedScene" uid="uid://d4csukjf0c5x5" path="res://ui/level_switcher.tscn" id="10_ga40o"]
 [ext_resource type="Texture2D" uid="uid://gdp0shq0c02o" path="res://assets/ui/kenny_ui_pack/PNG/Red/Double/button_square_line.png" id="11_xcho0"]
+[ext_resource type="PackedScene" uid="uid://di0gxais156bq" path="res://ui/hydra_button.tscn" id="12_y3hoh"]
 
 [node name="LevelSelector" type="Control" unique_id=2056442581]
 layout_mode = 3
@@ -107,6 +108,19 @@ grow_horizontal = 2
 grow_vertical = 2
 selected = ExtResource("11_xcho0")
 
+[node name="Editor" parent="." unique_id=116771927 instance=ExtResource("12_y3hoh")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -121.0
+offset_right = 137.0
+offset_bottom = -29.0
+grow_vertical = 0
+text = "K_EDITOR"
+
 [connection signal="pressed" from="Left" to="LevelSwitcher" method="left"]
 [connection signal="pressed" from="Right" to="LevelSwitcher" method="right"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Editor" to="." method="_on_editor_pressed"]

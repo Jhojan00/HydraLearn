@@ -46,4 +46,6 @@ GraphNode/styles/panel = SubResource("StyleBoxFlat_1degj")
 GraphNode/styles/panel_selected = SubResource("StyleBoxFlat_0mdq6")
 GraphNode/styles/titlebar_selected = SubResource("StyleBoxFlat_jvy6r")
 GraphNodeTitleLabel/colors/font_color = Color(1, 1, 1, 1)
-GraphNodeTitleLabel/font_sizes/font_size = 35
+GraphNodeTitleLabel/font_sizes/font_size = 18
+Label/font_sizes/font_size = 31
+PanelContainer/styles/panel = null

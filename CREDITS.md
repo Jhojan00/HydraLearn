@@ -21,7 +21,13 @@ URL: https://pixabay.com/sound-effects/film-special-effects-incorrect-293358/
 Creator: DRAGON-STUDIO
 Assets Name: correcto
 URL: https://pixabay.com/sound-effects/technology-correct-472358/
+
 ## Flags
 Creator: Dafluffypotato
 Assets Name: Pixel Country Flags - 15x10
 URL: https://dafluffypotato.itch.io/pixel-country-flags
+
+## Editor Icons
+Creator: Mayke Arth
+Assets Name: Cute Desktop Icons 32x32
+URL: https://mayke-arth.itch.io/cute-desktop-icons-32x32
