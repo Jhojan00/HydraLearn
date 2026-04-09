@@ -67,7 +67,7 @@ theme = ExtResource("1_fblgx")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fc3ap")
 theme_override_font_sizes/font_size = 100
-text = "K_HYDRALEARN"
+text = "K_APP_NAME"
 horizontal_alignment = 1
 
 [node name="HyCube" parent="." unique_id=991048914 instance=ExtResource("2_h17sc")]

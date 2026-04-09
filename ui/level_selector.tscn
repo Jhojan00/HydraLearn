@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c2d207dnin7x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_n.png" id="7_wqwhr"]
 [ext_resource type="Texture2D" uid="uid://bqasbkht6elr" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n.png" id="8_pknqb"]
 [ext_resource type="PackedScene" uid="uid://d4csukjf0c5x5" path="res://ui/level_switcher.tscn" id="10_ga40o"]
+[ext_resource type="Script" uid="uid://5cfjrugl5gdc" path="res://scripts/ui/back_button.gd" id="10_w7mh7"]
 [ext_resource type="Texture2D" uid="uid://gdp0shq0c02o" path="res://assets/ui/kenny_ui_pack/PNG/Red/Double/button_square_line.png" id="11_xcho0"]
 [ext_resource type="PackedScene" uid="uid://di0gxais156bq" path="res://ui/hydra_button.tscn" id="12_y3hoh"]
 
@@ -46,7 +47,7 @@ theme = ExtResource("1_wljwa")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_o75l3")
 theme_override_font_sizes/font_size = 100
-text = "K_LEVELS"
+text = "K_MENU_LEVELS"
 horizontal_alignment = 1
 
 [node name="Left" parent="." unique_id=721183148 instance=ExtResource("3_ga40o")]
@@ -79,19 +80,19 @@ texture_pressed = ExtResource("6_w7mh7")
 
 [node name="Back" parent="." unique_id=1477110048 instance=ExtResource("3_ga40o")]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -108.0
-offset_top = -105.0
-offset_right = -44.0
-offset_bottom = -41.0
-grow_horizontal = 0
+offset_left = 22.0
+offset_top = -90.0
+offset_right = 86.0
+offset_bottom = -26.0
 grow_vertical = 0
 texture_normal = ExtResource("7_wqwhr")
 texture_pressed = ExtResource("8_pknqb")
+script = ExtResource("10_w7mh7")
+next_scene = "uid://dchlm4wvis2f3"
+pattern = ""
 
 [node name="LevelSwitcher" parent="." unique_id=973965155 instance=ExtResource("10_ga40o")]
 layout_mode = 1
@@ -110,17 +111,19 @@ selected = ExtResource("11_xcho0")
 
 [node name="Editor" parent="." unique_id=116771927 instance=ExtResource("12_y3hoh")]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = -121.0
-offset_right = 137.0
-offset_bottom = -29.0
+offset_left = -803.0
+offset_top = -120.0
+offset_right = -25.0
+offset_bottom = -28.0
+grow_horizontal = 0
 grow_vertical = 0
-text = "K_EDITOR"
+text = "K_NETWORKING_EDITOR"
 
 [connection signal="pressed" from="Left" to="LevelSwitcher" method="left"]
 [connection signal="pressed" from="Right" to="LevelSwitcher" method="right"]
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Editor" to="." method="_on_editor_pressed"]

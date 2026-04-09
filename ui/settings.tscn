@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c2d207dnin7x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_n.png" id="9_bqqix"]
 [ext_resource type="Texture2D" uid="uid://bqasbkht6elr" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n.png" id="10_b4akq"]
 [ext_resource type="PackedScene" uid="uid://bdjn38snh8a6v" path="res://ui/language_switcher.tscn" id="11_b4akq"]
+[ext_resource type="Script" uid="uid://5cfjrugl5gdc" path="res://scripts/ui/back_button.gd" id="12_s70fv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_feasd"]
 texture = ExtResource("2_pcnwc")
@@ -33,7 +34,7 @@ texture_margin_top = 10.0
 texture_margin_right = 20.0
 texture_margin_bottom = 10.0
 
-[node name="Settings" type="Control" unique_id=130267083]
+[node name="Settings" type="Control" unique_id=130267083 node_paths=PackedStringArray("resolutions_button", "windows_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,6 +42,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yl6pr")
+resolutions_button = NodePath("HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer/Resolution/ResolutionsButton")
+windows_button = NodePath("HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer/WindowMode/WindowsButton")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1692377323]
 layout_mode = 1
@@ -79,7 +82,6 @@ offset_top = -3.0517578e-05
 offset_right = -84.0
 offset_bottom = -137.44006
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_constants/separation = 70
 
 [node name="ConfigVideo" type="VBoxContainer" parent="HBoxContainer" unique_id=1615582314]
@@ -94,10 +96,10 @@ size_flags_horizontal = 4
 theme = ExtResource("1_7kwmf")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_evr87")
-text = "K_VIDEO"
+text = "K_MENU_VIDEO"
 vertical_alignment = 1
 
-[node name="Container" type="NinePatchRect" parent="HBoxContainer/ConfigVideo" unique_id=2071363411]
+[node name="BG" type="NinePatchRect" parent="HBoxContainer/ConfigVideo" unique_id=2071363411]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("3_neoxp")
@@ -106,7 +108,7 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ConfigVideo/Container" unique_id=1498646407]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ConfigVideo/BG" unique_id=1498646407]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,22 +120,37 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigVideo/Container/MarginContainer" unique_id=1100773514]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigVideo/BG/MarginContainer" unique_id=1100773514]
 layout_mode = 2
 
-[node name="Resolution" type="HBoxContainer" parent="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer" unique_id=979339870]
+[node name="Resolution" type="HBoxContainer" parent="HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer" unique_id=769666467]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution" unique_id=1570130474]
+[node name="Label" type="Label" parent="HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer/Resolution" unique_id=1904390408]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_7kwmf")
 theme_override_font_sizes/font_size = 25
-text = "K_RESOLUTION"
+text = "K_VIDEO_RESOLUTION"
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="ResolutionsButton" parent="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution" unique_id=2033654159 instance=ExtResource("5_045ga")]
+[node name="ResolutionsButton" parent="HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer/Resolution" unique_id=2033654159 instance=ExtResource("5_045ga")]
+layout_mode = 2
+
+[node name="WindowMode" type="HBoxContainer" parent="HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer" unique_id=360773930]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer/WindowMode" unique_id=1892997764]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_7kwmf")
+theme_override_font_sizes/font_size = 25
+text = "K_VIDEO_WINDOW_MODE"
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="WindowsButton" parent="HBoxContainer/ConfigVideo/BG/MarginContainer/VBoxContainer/WindowMode" unique_id=1415755204 instance=ExtResource("5_045ga")]
 layout_mode = 2
 
 [node name="ConfigAudio" type="VBoxContainer" parent="HBoxContainer" unique_id=1409686005]
@@ -147,10 +164,10 @@ size_flags_horizontal = 4
 theme = ExtResource("1_7kwmf")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxTexture_045ga")
-text = "K_AUDIO"
+text = "K_MENU_AUDIO"
 vertical_alignment = 1
 
-[node name="Container" type="NinePatchRect" parent="HBoxContainer/ConfigAudio" unique_id=1839476450]
+[node name="BG" type="NinePatchRect" parent="HBoxContainer/ConfigAudio" unique_id=1839476450]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("4_yl6pr")
@@ -159,7 +176,7 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ConfigAudio/Container" unique_id=396611527]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ConfigAudio/BG" unique_id=396611527]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,58 +188,59 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer" unique_id=342504484]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ConfigAudio/BG/MarginContainer" unique_id=342504484]
 layout_mode = 2
 
-[node name="MasterAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer" unique_id=544836081]
+[node name="MasterAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer" unique_id=544836081]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio" unique_id=132813102]
+[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/MasterAudio" unique_id=132813102]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_7kwmf")
 theme_override_font_sizes/font_size = 25
-text = "K_MASTER_VOLUME"
+text = "K_AUDIO_VOLUME_MASTER"
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="MasterAudioSlider" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio" unique_id=1053713210 instance=ExtResource("6_evr87")]
+[node name="MasterAudioSlider" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/MasterAudio" unique_id=1053713210 instance=ExtResource("6_evr87")]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="SoundsAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer" unique_id=1508994732]
+[node name="SoundsAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer" unique_id=1508994732]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio" unique_id=1368775570]
+[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/SoundsAudio" unique_id=1368775570]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_7kwmf")
 theme_override_font_sizes/font_size = 25
-text = "K_SOUNDS_VOLUME"
+text = "K_AUDIO_VOLUME_SFX"
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="SoundsAudioSlider" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio" unique_id=2139714044 instance=ExtResource("6_evr87")]
+[node name="SoundsAudioSlider" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/SoundsAudio" unique_id=2139714044 instance=ExtResource("6_evr87")]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="MusicAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer" unique_id=711245586]
+[node name="MusicAudio" type="HBoxContainer" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer" unique_id=711245586]
+visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MusicAudio" unique_id=1392397255]
+[node name="Label" type="Label" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/MusicAudio" unique_id=1392397255]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_7kwmf")
 theme_override_font_sizes/font_size = 25
-text = "K_MUSIC_VOLUME"
+text = "K_AUDIO_VOLUME_MASTER"
 clip_text = true
 text_overrun_behavior = 1
 
-[node name="MusicAudioSlider" parent="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MusicAudio" unique_id=1307594028 instance=ExtResource("6_evr87")]
+[node name="MusicAudioSlider" parent="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/MusicAudio" unique_id=1307594028 instance=ExtResource("6_evr87")]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
@@ -243,6 +261,9 @@ grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("9_bqqix")
 texture_pressed = ExtResource("10_b4akq")
+script = ExtResource("12_s70fv")
+next_scene = "uid://dchlm4wvis2f3"
+pattern = ""
 
 [node name="LanguageSwitcher" parent="." unique_id=1641790850 instance=ExtResource("11_b4akq")]
 layout_mode = 1
@@ -255,9 +276,8 @@ offset_right = 326.0
 offset_bottom = -47.0
 grow_vertical = 0
 
-[connection signal="item_selected" from="HBoxContainer/ConfigVideo/Container/MarginContainer/VBoxContainer/Resolution/ResolutionsButton" to="." method="_on_option_button_item_selected"]
-[connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MasterAudio/MasterAudioSlider" to="." method="_on_master_audio_slider_value_changed"]
-[connection signal="drag_started" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio/SoundsAudioSlider" to="." method="_on_hydra_h_slider_drag_started"]
-[connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/SoundsAudio/SoundsAudioSlider" to="." method="_on_sounds_audio_slider_value_changed"]
-[connection signal="value_changed" from="HBoxContainer/ConfigAudio/Container/MarginContainer/VBoxContainer/MusicAudio/MusicAudioSlider" to="." method="_on_music_audio_slider_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/MasterAudio/MasterAudioSlider" to="." method="audio_changed" binds= ["Master"]]
+[connection signal="drag_started" from="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/SoundsAudio/SoundsAudioSlider" to="." method="_on_hydra_h_slider_drag_started"]
+[connection signal="value_changed" from="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/SoundsAudio/SoundsAudioSlider" to="." method="audio_changed" binds= ["Sounds"]]
+[connection signal="value_changed" from="HBoxContainer/ConfigAudio/BG/MarginContainer/VBoxContainer/MusicAudio/MusicAudioSlider" to="." method="audio_changed" binds= ["Music"]]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

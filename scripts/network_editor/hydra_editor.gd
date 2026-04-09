@@ -120,7 +120,3 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	add_child(instance)
 	instance.position_offset = at_position
 	instance.inicializate()
-
-
-func _on_back_pressed() -> void:
-	SceneManager.change_scene("uid://bojbxy80uap6s", {"pattern":"squares", "color":Color.BLACK})

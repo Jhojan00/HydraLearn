@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxbbjv12q40xi" path="res://scenes/network_editor/nodes/packet_node.tscn" id="9_rt0ql"]
 [ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="10_5oj0b"]
 [ext_resource type="Texture2D" uid="uid://bdxxn1oala3jt" path="res://assets/ui/kenny_ui_pack/PNG/Red/Double/arrow_decorative_n_small.png" id="11_u8jkw"]
+[ext_resource type="Script" uid="uid://5cfjrugl5gdc" path="res://scripts/ui/back_button.gd" id="12_u8jkw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yynxi"]
 content_margin_left = 0.0
@@ -141,6 +142,12 @@ offset_top = 1013.0
 offset_right = 77.0
 offset_bottom = 1061.0
 texture_normal = ExtResource("11_u8jkw")
+script = ExtResource("12_u8jkw")
+next_scene = "uid://bojbxy80uap6s"
+setted_options = {
+"color": Color(0, 0, 0, 1),
+"pattern": "squares"
+}
 
 [connection signal="connection_request" from="." to="." method="_on_connection_request"]
 [connection signal="copy_nodes_request" from="." to="." method="_on_copy_nodes_request"]

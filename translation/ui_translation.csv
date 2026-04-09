@@ -2,15 +2,17 @@ key,en,es
 K_PLAY,Play,Jugar
 K_SETTINGS,Settings,Configuración
 K_QUIT,Quit,Salir
-K_HYDRALEARN,HydraLearn,HydraLearn
-K_VIDEO,Video,Video
-K_AUDIO,Audio,Audio
-K_MASTER_VOLUME,Master Volume,Volumen General
-K_SOUNDS_VOLUME,Sounds Volume,Volumen de Efectos
-K_MUSIC_VOLUME,Music Volume,Volumen de Música
-K_RESOLUTION,Resolution,Resolución
-K_LEVELS,Levels,Niveles
-K_EDITOR,Editor,Editor
-K_LEVEL_1
-K_LEVEL_2
-K_LEVEL_3
+K_APP_NAME,HydraLearn,HydraLearn
+K_MENU_VIDEO,Video,Video
+K_MENU_AUDIO,Audio,Audio
+K_AUDIO_VOLUME_MASTER,Master Volume,Volumen General
+K_AUDIO_VOLUME_SFX,Sound Effects Volume,Volumen de Efectos
+K_AUDIO_VOLUME_MUSIC,Music Volume,Volumen de Música
+K_MENU_LEVELS,Levels,Niveles
+K_NETWORKING_EDITOR,Editor,Editor
+K_LEVEL_LABEL,Level {n},Nivel {n}
+K_VIDEO_RESOLUTION,Resolution,Resolución
+K_VIDEO_WINDOW_MODE,Window Mode,Modo de Ventana
+K_VIDEO_WINDOW_MODE_MAXIMIZED,Maximized,Maximizado
+K_VIDEO_WINDOW_MODE_WINDOWED,Windowed,En ventana
+K_VIDEO_WINDOW_MODE_FULLSCREEN,Fullscreen,Pantalla completa
