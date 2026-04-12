@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0sjt8fkw0l1d" path="res://scripts/ui/level_switcher.gd" id="1_2p7px"]
 [ext_resource type="Texture2D" uid="uid://bro1fuek8df1o" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/button_square_line.png" id="1_kuhxd"]
 [ext_resource type="Texture2D" uid="uid://b845w1wpn48k6" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/button_square_line.png" id="3_oy0up"]
+[ext_resource type="Script" uid="uid://76i03v4no4ab" path="res://components/level_data.gd" id="3_un8qb"]
 [ext_resource type="Texture2D" uid="uid://358wlwlhvdv" path="res://assets/ui/kenny_ui_pack/PNG/Blue/Double/button_square_line.png" id="4_btsip"]
 [ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="5_6dtqd"]
 [ext_resource type="Script" uid="uid://b4ijw4dk5brix" path="res://components/switcher.gd" id="5_xp7cm"]
@@ -29,6 +30,12 @@ texture_margin_left = 15.0
 texture_margin_top = 15.0
 texture_margin_right = 15.0
 texture_margin_bottom = 15.0
+
+[sub_resource type="Resource" id="Resource_un8qb"]
+script = ExtResource("3_un8qb")
+scene_uid = "uid://bp5rqfllau2l3"
+character_path = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container1/MarginContainer/VBoxContainer/Hycube")
+metadata/_custom_type_script = "uid://76i03v4no4ab"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btsip"]
 texture = ExtResource("3_oy0up")
@@ -59,6 +66,7 @@ offset_right = 1352.0
 offset_bottom = 374.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oy0up")
 script = ExtResource("1_2p7px")
+levels = Array[ExtResource("3_un8qb")]([SubResource("Resource_un8qb")])
 containers = [NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container1"), NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container2"), NodePath("MarginContainer/VBoxContainer/HBoxContainer/Container3")]
 unselected = ExtResource("3_oy0up")
 selected = ExtResource("4_btsip")
@@ -101,7 +109,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("5_6dtqd")
-text = "K_LEVEL_1"
+text = "K_LEVEL_LABEL"
 horizontal_alignment = 1
 autowrap_mode = 1
 
@@ -146,7 +154,7 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("5_6dtqd")
-text = "K_LEVEL_2"
+text = "K_LEVEL_LABEL"
 horizontal_alignment = 1
 autowrap_mode = 1
 
@@ -189,7 +197,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme = ExtResource("5_6dtqd")
-text = "K_LEVEL_3"
+text = "K_LEVEL_LABEL"
 horizontal_alignment = 1
 autowrap_mode = 1
 
