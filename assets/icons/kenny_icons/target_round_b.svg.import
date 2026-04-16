@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4faysgfj0k2o"
-path="res://.godot/imported/games-03.png-12e22ee3b99d78840879dec7ee6c391b.ctex"
+uid="uid://btke2pvbe146s"
+path="res://.godot/imported/target_round_b.svg-0fd4a1fa58593f0f320f9f4c0de3d904.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cute_icons/games-03.png"
-dest_files=["res://.godot/imported/games-03.png-12e22ee3b99d78840879dec7ee6c391b.ctex"]
+source_file="res://assets/icons/kenny_icons/target_round_b.svg"
+dest_files=["res://.godot/imported/target_round_b.svg-0fd4a1fa58593f0f320f9f4c0de3d904.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

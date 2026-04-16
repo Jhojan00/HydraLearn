@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://r8bwqandumu2"]
+
+[ext_resource type="Texture2D" uid="uid://dpwseq4op1qvd" path="res://assets/icons/kenny_icons/spinner.svg" id="1_0cjb3"]
+[ext_resource type="Script" uid="uid://eu4qagybtxb5" path="res://scripts/hydra_editor/tools.gd" id="1_y7luu"]
+[ext_resource type="Texture2D" uid="uid://b6apugqsfgiga" path="res://assets/icons/kenny_icons/hexagon_switch.svg" id="3_74knw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwwce"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwwce"]
+
+[node name="Tools" type="PanelContainer" unique_id=912111584]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 124.0
+offset_top = 18.0
+offset_right = -122.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uwwce")
+script = ExtResource("1_y7luu")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1281898931]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=551629484]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Delete" type="Button" parent="MarginContainer/HBoxContainer" unique_id=482315594]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uwwce")
+icon = ExtResource("1_0cjb3")
+expand_icon = true
+
+[node name="Cable" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1107543306]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uwwce")
+icon = ExtResource("3_74knw")
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Cable" to="." method="_on_cable_pressed"]
