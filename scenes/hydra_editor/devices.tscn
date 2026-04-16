@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dyjvqlii3iwkt"]
+
+[ext_resource type="PackedScene" uid="uid://dw2aha0gb7n4" path="res://scenes/hydra_editor/nodes/base_drop_node.tscn" id="1_1q8af"]
+[ext_resource type="Texture2D" uid="uid://bwkse3cahtnjb" path="res://assets/icons/cute_icons/drive-01.png" id="2_64edj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr37l"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 10
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1q8af"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+shadow_size = 10
+shadow_offset = Vector2(0, 1)
+
+[node name="Devices" type="PanelContainer" unique_id=270969969]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 84.0
+offset_right = 100.0
+offset_bottom = -84.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rr37l")
+
+[node name="BG" type="PanelContainer" parent="." unique_id=6913415]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_1q8af")
+
+[node name="MarginContainer" type="MarginContainer" parent="BG" unique_id=1538479478]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Devices" type="VBoxContainer" parent="BG/MarginContainer" unique_id=1865485220]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 23
+
+[node name="PC" parent="BG/MarginContainer/Devices" unique_id=1138909890 instance=ExtResource("1_1q8af")]
+layout_mode = 2
+node_path = "uid://bhvq7wfqai2pu"
+type = "host"
+
+[node name="Switch" parent="BG/MarginContainer/Devices" unique_id=1101412658 instance=ExtResource("1_1q8af")]
+layout_mode = 2
+texture = ExtResource("2_64edj")
+node_path = "uid://dirkk1djkdiwx"
+type = "switch"

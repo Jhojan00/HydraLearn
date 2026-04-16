@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://puy3jo5a3n6q"]
+
+[ext_resource type="Texture2D" uid="uid://m23e40btp0wr" path="res://assets/icons/kenny_icons/timer_100.svg" id="1_73801"]
+[ext_resource type="Script" uid="uid://cryyge2wlf06k" path="res://scripts/hydra_editor/nodes/port_view.gd" id="2_adh4n"]
+
+[node name="PortView" type="TextureRect" unique_id=1286932579]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 0
+texture = ExtResource("1_73801")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_adh4n")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

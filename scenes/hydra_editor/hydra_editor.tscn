@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bon1xju6xr8s7"]
 
-[ext_resource type="PackedScene" uid="uid://capern0ng722p" path="res://scenes/hydra_editor/nodes/base_node.tscn" id="1_0hclo"]
 [ext_resource type="Script" uid="uid://bqj1jigekwrox" path="res://scripts/hydra_editor/hydra_editor.gd" id="1_or1uj"]
+[ext_resource type="PackedScene" uid="uid://dyjvqlii3iwkt" path="res://scenes/hydra_editor/devices.tscn" id="2_psjx7"]
 [ext_resource type="PackedScene" uid="uid://r8bwqandumu2" path="res://scenes/hydra_editor/tools.tscn" id="3_uwwce"]
 
 [node name="HydraEditor" type="GraphEdit" unique_id=1601678525]
@@ -20,38 +20,19 @@ show_minimap_button = false
 show_arrange_button = false
 script = ExtResource("1_or1uj")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1088218684]
-custom_minimum_size = Vector2(100, 0)
+[node name="Devices" parent="." unique_id=270969969 instance=ExtResource("2_psjx7")]
+z_index = 1
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_top = 84.0
-offset_right = 100.0
-offset_bottom = -84.0
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1325621883]
-layout_mode = 2
-
-[node name="GraphElement" parent="." unique_id=441519130 instance=ExtResource("1_0hclo")]
-layout_mode = 0
-offset_left = 377.0
-offset_top = 400.0
-offset_right = 547.0
-offset_bottom = 659.0
-position_offset = Vector2(377, 400)
-
-[node name="GraphElement2" parent="." unique_id=1831580829 instance=ExtResource("1_0hclo")]
-layout_mode = 0
-offset_left = 583.0
-offset_top = 403.0
-offset_right = 753.0
-offset_bottom = 662.0
-position_offset = Vector2(583, 403)
+offset_top = 174.0
+offset_right = 126.0
+offset_bottom = -174.0
 
 [node name="Tools" parent="." unique_id=912111584 instance=ExtResource("3_uwwce")]
+z_index = 1
 layout_mode = 1
 offset_left = 164.0
 offset_top = 26.0
 offset_right = -164.0
 offset_bottom = 81.0
+
+[connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]

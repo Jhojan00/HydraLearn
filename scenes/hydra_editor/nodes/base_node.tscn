@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://capern0ng722p"]
 
 [ext_resource type="Script" uid="uid://ce0rmc3vh53a2" path="res://scripts/hydra_editor/nodes/base_node.gd" id="1_a0hpm"]
-[ext_resource type="Texture2D" uid="uid://d4faysgfj0k2o" path="res://assets/cute_icons/games-03.png" id="2_g2ppn"]
+[ext_resource type="Texture2D" uid="uid://d4faysgfj0k2o" path="res://assets/icons/cute_icons/games-03.png" id="2_g2ppn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h4vy"]
 content_margin_left = 0.0
@@ -15,21 +15,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2ppn"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-corner_detail = 5
-
 [node name="BaseNode" type="GraphElement" unique_id=441519130]
 offset_right = 170.0
-offset_bottom = 259.0
+offset_bottom = 214.0
 script = ExtResource("1_a0hpm")
 
 [node name="BG" type="PanelContainer" parent="." unique_id=787926487]
@@ -65,16 +53,12 @@ texture = ExtResource("2_g2ppn")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Anchor" type="GraphElement" parent="BG/MarginContainer/VBoxContainer" unique_id=1915173088]
+[node name="PortsContainer" type="HBoxContainer" parent="BG/MarginContainer/VBoxContainer" unique_id=857063895]
 unique_name_in_owner = true
-layout_mode = 2
-
-[node name="PortsConection" type="Panel" parent="BG/MarginContainer/VBoxContainer/Anchor" unique_id=1251597560]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 size_flags_horizontal = 4
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_g2ppn")
+size_flags_vertical = 4
 
 [connection signal="node_deselected" from="." to="." method="_on_node_deselected"]
 [connection signal="node_selected" from="." to="." method="_on_node_selected"]
