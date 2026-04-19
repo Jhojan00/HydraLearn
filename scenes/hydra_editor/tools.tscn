@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dpwseq4op1qvd" path="res://assets/icons/kenny_icons/spinner.svg" id="1_0cjb3"]
 [ext_resource type="Script" uid="uid://eu4qagybtxb5" path="res://scripts/hydra_editor/tools.gd" id="1_y7luu"]
-[ext_resource type="Texture2D" uid="uid://b6apugqsfgiga" path="res://assets/icons/kenny_icons/hexagon_switch.svg" id="3_74knw"]
+[ext_resource type="Texture2D" uid="uid://b336yuetqyo50" path="res://assets/icons/kenny_mouse_icons/pointer_c.svg" id="2_a4t20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_im40l"]
 content_margin_left = 0.0
@@ -22,7 +22,7 @@ expand_margin_bottom = 5.0
 shadow_size = 5
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc8al"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4t20"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
@@ -62,12 +62,19 @@ theme_override_constants/margin_bottom = 10
 
 [node name="BG" type="PanelContainer" parent="MarginContainer" unique_id=1143086346]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uc8al")
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4t20")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/BG" unique_id=551629484]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 10
+
+[node name="Normal" type="Button" parent="MarginContainer/BG/HBoxContainer" unique_id=803711539]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uwwce")
+icon = ExtResource("2_a4t20")
+expand_icon = true
 
 [node name="Delete" type="Button" parent="MarginContainer/BG/HBoxContainer" unique_id=482315594]
 custom_minimum_size = Vector2(35, 35)
@@ -76,12 +83,5 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_uwwce")
 icon = ExtResource("1_0cjb3")
 expand_icon = true
 
-[node name="Cable" type="Button" parent="MarginContainer/BG/HBoxContainer" unique_id=1107543306]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_uwwce")
-icon = ExtResource("3_74knw")
-expand_icon = true
-
+[connection signal="pressed" from="MarginContainer/BG/HBoxContainer/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="MarginContainer/BG/HBoxContainer/Delete" to="." method="_on_delete_pressed"]
-[connection signal="pressed" from="MarginContainer/BG/HBoxContainer/Cable" to="." method="_on_cable_pressed"]

@@ -71,3 +71,6 @@ func remove_connection(device_id: String, port_idx: int):
 
 	else:
 		push_warning("Id of device not found.")
+		
+func send_packet(device, mac_address):
+	pass

@@ -1,8 +1,8 @@
 extends Node
 class_name Link
 
-var latency: float
-var loss_probability: float
+var latency: float = 0.2
+var loss_probability: float = 0
 var port_a: Port
 var port_b: Port
 

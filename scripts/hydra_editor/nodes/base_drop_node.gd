@@ -17,5 +17,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	
 	set_drag_preview(preview)
 	
+	var data = {"type": "device", "node_path": node_path, "device_type": type}
 	
-	return {"node_path": node_path, "type": type}
+	
+	return data

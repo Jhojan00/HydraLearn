@@ -19,6 +19,7 @@ corner_detail = 5
 offset_right = 170.0
 offset_bottom = 214.0
 script = ExtResource("1_a0hpm")
+selected_color = Color(0.1742067, 0.15770379, 0.15770441, 0.6)
 
 [node name="BG" type="PanelContainer" parent="." unique_id=787926487]
 layout_mode = 2

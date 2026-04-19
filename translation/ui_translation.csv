@@ -16,3 +16,4 @@ K_VIDEO_WINDOW_MODE,Window Mode,Modo de Ventana
 K_VIDEO_WINDOW_MODE_MAXIMIZED,Maximized,Maximizado
 K_VIDEO_WINDOW_MODE_WINDOWED,Windowed,En ventana
 K_VIDEO_WINDOW_MODE_FULLSCREEN,Fullscreen,Pantalla completa
+K_EDITOR_INSPECTOR,Inspector,Inspector

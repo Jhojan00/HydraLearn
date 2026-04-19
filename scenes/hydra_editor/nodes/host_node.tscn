@@ -6,6 +6,11 @@
 
 [node name="HostNode" unique_id=441519130 instance=ExtResource("1_nc3gu")]
 script = ExtResource("2_chovi")
+n_ports = 3
+
+[node name="LineEdit" parent="BG/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(202349173) index="0" unique_id=1734115117]
+text = "PC"
+placeholder_text = "Name"
 
 [node name="TextureRect" parent="BG/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(202349173) index="1" unique_id=1643970240]
 texture = ExtResource("3_vvxix")

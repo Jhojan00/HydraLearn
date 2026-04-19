@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkqfa3fjaohj7"]
+
+[ext_resource type="Script" uid="uid://syymbtjvp0s3" path="res://scripts/hydra_editor/nodes/link_view.gd" id="1_7nyd1"]
+
+[node name="LinkView" type="Line2D" unique_id=1053517507]
+script = ExtResource("1_7nyd1")

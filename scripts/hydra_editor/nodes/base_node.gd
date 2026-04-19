@@ -9,12 +9,14 @@ class_name BaseNode
 @export var selected_color: Color = Color(0.22, 0.2, 0.2, 0.6)
 @export var normal_color: Color = Color(0.1, 0.1, 0.1, 0.6)
 
-
 @onready var bg: PanelContainer = $BG
 @onready var ports_container: HBoxContainer = %PortsContainer
 
-
 const PORT_VIEW = preload("uid://puy3jo5a3n6q")
+
+signal port_connected(from: BaseNode, from_port: int, to: BaseNode, to_port: int)
+signal deleted(node: BaseNode)
+
 
 func _ready() -> void:
 	var new_style = StyleBoxFlat.new()
@@ -41,6 +43,9 @@ func _change_color(color: Color):
 func _on_node_selected() -> void:
 	_change_color(selected_color)
 	
+	if State.get_mode() == State.MODES.DELETE:
+		deleted.emit(self)
+	
 func _on_node_deselected() -> void:
 	_change_color(normal_color)
 
@@ -48,16 +53,24 @@ func _on_node_deselected() -> void:
 
 func _create_ports():
 	for i in n_ports:
-		var port_view = PORT_VIEW.instantiate()
+		var port_view = PORT_VIEW.instantiate() as PortView
+		port_view.device_node = self
+		port_view.index = i
+		
+		port_view.port_connected.connect(connection_started)
+		
 		ports_container.add_child(port_view)
 
 func get_port_position(port_idx:int) -> Vector2:
-	var port = ports_container.get_child(port_idx) as Control
+	var port = ports_container.get_child(port_idx) as PortView
 	
-	var global_pos = port.global_position
-	var graph_global = owner.global_position
+	return port.get_global_rect().get_center()
+
+func set_port_status(port_idx:int, busy:bool, color:Color = Color.DEEP_SKY_BLUE):
+	var port = ports_container.get_child(port_idx) as PortView
+	port.modulate = color if busy else Color.WHITE
 	
-	return (global_pos - graph_global + owner.scroll_offset) / owner.zoom
+	port.busy = busy
 
 func create_mac_address() -> String:
 	var parts: Array[String] = []
@@ -67,3 +80,6 @@ func create_mac_address() -> String:
 		parts.append("%02X" % byte)
 	
 	return ":".join(parts)
+
+func connection_started(from: BaseNode, from_port: int, to: BaseNode, to_port: int):
+	port_connected.emit(from, from_port, to, to_port)

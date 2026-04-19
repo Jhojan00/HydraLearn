@@ -3,6 +3,46 @@
 [ext_resource type="Script" uid="uid://bqj1jigekwrox" path="res://scripts/hydra_editor/hydra_editor.gd" id="1_or1uj"]
 [ext_resource type="PackedScene" uid="uid://dyjvqlii3iwkt" path="res://scenes/hydra_editor/devices.tscn" id="2_psjx7"]
 [ext_resource type="PackedScene" uid="uid://r8bwqandumu2" path="res://scenes/hydra_editor/tools.tscn" id="3_uwwce"]
+[ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="4_e4njx"]
+[ext_resource type="Texture2D" uid="uid://ctri36wu08lkl" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n_small.png" id="5_wd34e"]
+[ext_resource type="Script" uid="uid://5cfjrugl5gdc" path="res://scripts/ui/back_button.gd" id="6_wd34e"]
+[ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="7_eu0xh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu0xh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlq07"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 1)
 
 [node name="HydraEditor" type="GraphEdit" unique_id=1601678525]
 anchors_preset = 15
@@ -30,9 +70,90 @@ offset_bottom = -174.0
 [node name="Tools" parent="." unique_id=912111584 instance=ExtResource("3_uwwce")]
 z_index = 1
 layout_mode = 1
-offset_left = 164.0
-offset_top = 26.0
-offset_right = -164.0
-offset_bottom = 81.0
+anchors_preset = 1
+anchor_left = 1.0
+offset_left = -145.0
+offset_top = 33.0
+offset_right = -35.0
+offset_bottom = 88.0
+grow_horizontal = 0
+
+[node name="Back" parent="." unique_id=1477110048 instance=ExtResource("4_e4njx")]
+modulate = Color(0.12225223, 0.12225223, 0.12225223, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -91.0
+offset_right = -47.0
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_wd34e")
+script = ExtResource("6_wd34e")
+next_scene = "uid://bojbxy80uap6s"
+setted_options = {
+"color": Color(0, 0, 0, 1),
+"pattern": "squares"
+}
+
+[node name="Label" type="Label" parent="." unique_id=755290457]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.5
+offset_top = 66.0
+offset_right = 358.5
+offset_bottom = 156.0
+grow_horizontal = 2
+theme = ExtResource("7_eu0xh")
+theme_override_colors/font_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+theme_override_font_sizes/font_size = 80
+text = "Hydra Editor"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1457290255]
+z_index = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -272.0
+offset_right = -21.0
+offset_bottom = 266.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu0xh")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=884251927]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer" unique_id=1445600742]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlq07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer" unique_id=812263983]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/PanelContainer/VBoxContainer" unique_id=1772410860]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 23
+text = "K_EDITOR_INSPECTOR"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/PanelContainer/VBoxContainer" unique_id=1573446552]
+layout_mode = 2
 
 [connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]

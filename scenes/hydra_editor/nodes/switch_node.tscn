@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://capern0ng722p" path="res://scenes/hydra_editor/nodes/base_node.tscn" id="1_83wqs"]
 [ext_resource type="Texture2D" uid="uid://bwkse3cahtnjb" path="res://assets/icons/cute_icons/drive-01.png" id="2_vvkat"]
-[ext_resource type="Script" uid="uid://fvdopqt421ev" path="res://scripts/hydra_editor/nodes/port_view.gd" id="3_cc0js"]
 
 [node name="SwitchNode" unique_id=441519130 instance=ExtResource("1_83wqs")]
+n_ports = 6
+
+[node name="LineEdit" parent="BG/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(202349173) index="0" unique_id=1734115117]
+text = "Switch"
+placeholder_text = "Name"
 
 [node name="TextureRect" parent="BG/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(202349173) index="1" unique_id=1643970240]
 texture = ExtResource("2_vvkat")
-
-[node name="PortView" parent="BG/MarginContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(1101112959) index="0" unique_id=1818443119]
-script = ExtResource("3_cc0js")
