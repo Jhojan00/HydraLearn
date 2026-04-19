@@ -14,14 +14,6 @@ Creator: Kenny
 Assets Name: Interface Sounds
 URL: https://kenney.nl/assets/interface-sounds
 
-Creator: u_n2rdb8hxnh
-Assets Name: incorrecto
-URL: https://pixabay.com/sound-effects/film-special-effects-incorrect-293358/
-
-Creator: DRAGON-STUDIO
-Assets Name: correcto
-URL: https://pixabay.com/sound-effects/technology-correct-472358/
-
 ## Flags
 Creator: Dafluffypotato
 Assets Name: Pixel Country Flags - 15x10

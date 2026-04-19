@@ -3,7 +3,6 @@ extends Control
 @onready var tutorial: PanelContainer = $Tutorial
 
 const HYDRA_BALLON = preload("uid://cvwh447ottsb3")
-const ARROW_DECORATIVE_E_SMALL = preload("uid://cyocq0nqvmqko")
 
 const dialogs = [
 	preload("res://dialogs/p1_switch_host.dialogue"),

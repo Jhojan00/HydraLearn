@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://jqe0wgi8lgc2" path="res://assets/ui/kenny_ui_pack/Font/Kenney Future Narrow.ttf" id="2_o75l3"]
 [ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="3_ga40o"]
 [ext_resource type="Texture2D" uid="uid://c2d207dnin7x" path="res://assets/ui/kenny_ui_pack/PNG/Green/Double/arrow_decorative_n.png" id="7_wqwhr"]
-[ext_resource type="Texture2D" uid="uid://bqasbkht6elr" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_n.png" id="8_pknqb"]
 [ext_resource type="PackedScene" uid="uid://dlcxlle6mmjqy" path="res://scenes/entities/base_npc.tscn" id="10_ga40o"]
 [ext_resource type="Script" uid="uid://5cfjrugl5gdc" path="res://scripts/ui/back_button.gd" id="10_w7mh7"]
 [ext_resource type="Texture2D" uid="uid://b0g3iwcjtoqnr" path="res://assets/sprites/kenny_shape_characters/Double/red_body_squircle.png" id="11_wqwhr"]
@@ -14,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://di0gxais156bq" path="res://ui/hydra_button.tscn" id="12_y3hoh"]
 [ext_resource type="Texture2D" uid="uid://cdf8afehvolnr" path="res://assets/sprites/kenny_shape_characters/Double/red_hand_rock.png" id="13_htcor"]
 [ext_resource type="Texture2D" uid="uid://d3bxufbtg1omo" path="res://assets/sprites/kenny_shape_characters/Double/red_hand_closed.png" id="14_cwy1o"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w7mh7"]
+load_path = "res://.godot/imported/arrow_decorative_n.png-624f49d0d077eb4442ecd22168cc838d.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o75l3"]
 
@@ -64,7 +66,7 @@ offset_right = 86.0
 offset_bottom = -26.0
 grow_vertical = 0
 texture_normal = ExtResource("7_wqwhr")
-texture_pressed = ExtResource("8_pknqb")
+texture_pressed = SubResource("CompressedTexture2D_w7mh7")
 script = ExtResource("10_w7mh7")
 next_scene = "uid://dchlm4wvis2f3"
 setted_options = {}

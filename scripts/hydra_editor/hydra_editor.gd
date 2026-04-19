@@ -148,15 +148,15 @@ func start_animating():
 		var to_mac = data["to"]
 
 		var con = _get_connection(from_mac, to_mac)
+		if con:
+			var is_forward = con["from_node"].mac_address == from_mac
 
-		var is_forward = con["from_node"].mac_address == from_mac
+			if is_forward:
+				line.start_sending(0.0, 1.0)
+			else:
+				line.start_sending(1.0, 0.0)
 
-		if is_forward:
-			line.start_sending(0.0, 1.0)
-		else:
-			line.start_sending(1.0, 0.0)
-
-		await line.anim_finished
+			await line.anim_finished
 
 	animating = false
 	
