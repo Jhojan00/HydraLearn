@@ -1,9 +1,10 @@
 extends Node
 class_name Port
 
-signal packet_received(packet:Packet, port:Port)
+signal packet_received(packet:Packet, port:Port, from_mac: String)
 
 var link: Link
+var owner_mac: String
 
 func send_packet(packet:Packet):
 	if link:
@@ -11,5 +12,5 @@ func send_packet(packet:Packet):
 	else:
 		push_warning("There is no link to send the data through.")
 	
-func receive_packet(packet:Packet):
-	packet_received.emit(packet, self)
+func receive_packet(packet:Packet, from_mac: String):
+	packet_received.emit(packet, self, from_mac)

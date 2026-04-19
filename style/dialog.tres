@@ -1,0 +1,34 @@
+[gd_resource type="Theme" format=3 uid="uid://ys56uvxpnx5r"]
+
+[ext_resource type="FontFile" uid="uid://0svss6xwn6cd" path="res://assets/ui/kenny_ui_pack/Font/Kenney Future.ttf" id="1_o3c0i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3c0i"]
+bg_color = Color(0.29219002, 0.29219005, 0.29218993, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 37.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0qe8"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font = ExtResource("1_o3c0i")
+AcceptDialog/colors/title_color = Color(1, 1, 1, 1)
+AcceptDialog/font_sizes/title_font_size = 17
+AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_o3c0i")
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_a0qe8")
+Label/colors/font_color = Color(0.15686275, 0.8, 0.53333336, 1)

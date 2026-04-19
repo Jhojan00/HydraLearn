@@ -2,13 +2,17 @@ extends GraphEdit
 
 @onready var connection_layer = get_node("_connection_layer")
 @onready var inspector: Inspector = $Inspector
+@onready var network_handler: NetworkHandler = $NetworkHandler
+@onready var arrived_dialog: AcceptDialog = $ArrivedDialog
 
 const LINE = preload("uid://dkqfa3fjaohj7")
 
 var last_zoom := zoom
-var network_handler := NetworkHandler.new()
 var devices: Dictionary[String, BaseNode]
 var ui_connections: Array = []
+var line_animation_queue: Array[Dictionary] = []
+var animating = false
+var arrived = false
 
 func _ready() -> void:
 	randomize()
@@ -35,18 +39,29 @@ func _update_line(data):
 	if not is_instance_valid(data["from_node"]) or not is_instance_valid(data["to_node"]):
 		return
 
-	var line = data["line"]
-	line.clear_points()
+	var line = data["line"] as LineView
+	line.clean()
 	
 	var from_pos = _get_port_anchor(data["from_node"], data["from_port"])
 	var to_pos = _get_port_anchor(data["to_node"], data["to_port"])
 	
-	line.add_point(from_pos)
-	line.add_point(to_pos)
+	line.add_curve_point(from_pos)
+	line.add_curve_point(to_pos)
+	
+	line.sync_position()
 
 func _on_node_moved():
 	for con in ui_connections:
 		_update_line(con)
+
+func _get_connection(a: String, b: String):
+	for con in ui_connections:
+		var fa = con["from_node"].mac_address
+		var fb = con["to_node"].mac_address
+
+		if (fa == a and fb == b) or (fa == b and fb == a):
+			return con
+
 
 func remove_connection_by_line(line: LineView) -> void:
 	for i in range(ui_connections.size() - 1, -1, -1):
@@ -106,6 +121,49 @@ func add_connection(from: BaseNode, from_port: int, to: BaseNode, to_port: int):
 	from.set_port_status(from_port, true, color)
 	to.set_port_status(to_port, true, color)
 
+func find_line_by_macs(from_mac: String, to_mac: String) -> LineView:
+	for con in ui_connections:
+		var from_node = con["from_node"]
+		var to_node = con["to_node"]
+
+		if not is_instance_valid(from_node) or not is_instance_valid(to_node):
+			continue
+
+		var a = from_node.mac_address
+		var b = to_node.mac_address
+
+		if (a == from_mac and b == to_mac) or (a == to_mac and b == from_mac):
+			return con["line"]
+
+	return null
+
+func start_animating():
+	animating = true
+	
+	while line_animation_queue:
+		var data = line_animation_queue.pop_front()
+
+		var line = data["line"]
+		var from_mac = data["from"]
+		var to_mac = data["to"]
+
+		var con = _get_connection(from_mac, to_mac)
+
+		var is_forward = con["from_node"].mac_address == from_mac
+
+		if is_forward:
+			line.start_sending(0.0, 1.0)
+		else:
+			line.start_sending(1.0, 0.0)
+
+		await line.anim_finished
+
+	animating = false
+	
+	if arrived:
+		arrived_dialog.show()	
+		arrived = false
+
 #endregion Lines
 
 #region Devices
@@ -151,6 +209,7 @@ func add_device(at_position: Vector2, data: Dictionary):
 	node.position_offset_changed.connect(_on_node_moved)
 	node.deleted.connect(remove_device)
 	
+	
 func remove_device(device: BaseNode):
 	remove_connection_by_device(device)
 	
@@ -189,3 +248,40 @@ func _on_node_deselected(node: Node) -> void:
 	inspector.hide()
 
 #endregion Interaction
+
+#region Packets
+
+
+	
+
+func _on_inspector_send_message(origin_mac: String, destination_mac: String, data: String) -> void:
+	print("Sending message!")
+	network_handler.send_packet(origin_mac, destination_mac, data)
+
+func _on_network_handler_packet_arrived_device(from_mac: String, to_mac: String) -> void:
+	var line = find_line_by_macs(from_mac, to_mac)
+	line_animation_queue.append({
+	"line": line,
+	"from": from_mac,
+	"to": to_mac
+	})
+	
+	if not animating:
+		start_animating()
+
+func _on_network_handler_packet_recieved(packet: Packet) -> void:
+	arrived_dialog.dialog_text = """
+	Packet id: %d
+	Byte Content: %s
+	Content: %s
+	From mac: %s
+	""" % [
+		packet.id,
+		str(packet.content),
+		packet.content.get_string_from_utf8(),
+		packet.origin
+		]
+		
+	arrived = true
+
+#endregion Packets

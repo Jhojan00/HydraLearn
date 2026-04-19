@@ -9,10 +9,20 @@ var _classes_map := {
 	"switch" : Switch
 }
 
+signal packet_arrived_device(from_mac:String, to_mac: String)
+signal packet_recieved(packet:Packet)
+
+
 func add_device(type:String, mac_address: String, n_ports: int):
 	if _classes_map.get(type):
 		var new_device = _classes_map[type].new() as Device
 		new_device.mac_address = mac_address
+		new_device.packet_arrived.connect(
+			func(from_mac, to_mac): packet_arrived_device.emit(from_mac, to_mac)
+			)
+			
+		if new_device is Host:
+			new_device.packet_recieved.connect(func(packet): packet_recieved.emit(packet))
 		
 		for _i in range(n_ports):
 			new_device.add_port(Port.new())
@@ -72,5 +82,18 @@ func remove_connection(device_id: String, port_idx: int):
 	else:
 		push_warning("Id of device not found.")
 		
-func send_packet(device, mac_address):
-	pass
+func send_packet(origin_mac: String, destination_mac: String, data: String):
+	if not devices.has(origin_mac):
+		push_warning("Origin device not found.")
+		return
+
+	var host = devices[origin_mac] as Host
+
+	var packet = Packet.new()
+	packet.origin = origin_mac
+	packet.destination = destination_mac
+	packet.content = data.to_utf8_buffer()
+	packet.id = randi()
+	packet.ttl = 10
+
+	host.send_packet(packet)

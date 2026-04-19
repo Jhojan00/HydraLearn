@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://dkqfa3fjaohj7"]
 
 [ext_resource type="Script" uid="uid://syymbtjvp0s3" path="res://scripts/hydra_editor/nodes/link_view.gd" id="1_7nyd1"]
+[ext_resource type="Texture2D" uid="uid://da7e8xy0xdhmp" path="res://assets/icons/cute_icons/mail-01.png" id="2_8g52o"]
+
+[sub_resource type="Curve2D" id="Curve2D_8g52o"]
 
 [node name="LinkView" type="Line2D" unique_id=1053517507]
 script = ExtResource("1_7nyd1")
+
+[node name="MessagePath" type="Path2D" parent="." unique_id=923595705]
+visible = false
+curve = SubResource("Curve2D_8g52o")
+
+[node name="FollowMessage" type="PathFollow2D" parent="MessagePath" unique_id=381916573]
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MessagePath/FollowMessage" unique_id=1605714440]
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_8g52o")

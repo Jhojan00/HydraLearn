@@ -13,7 +13,7 @@ class_name Inspector
 
 var can_send := true
 
-signal send_message
+signal send_message(origin_mac: String, destination_mac: String, data: String)
 signal name_changed(new_name: String)
 
 
@@ -25,7 +25,7 @@ func _on_send_pressed() -> void:
 	
 	error_label.hide()
 	
-	send_message.emit()
+	send_message.emit(mac_edit.text, target_edit.text, message_edit.text)
 	
 	hide()
 
@@ -36,9 +36,7 @@ func update_inspector(device: String, n_ports: int, mac_address: String, can_sen
 	
 	for con in name_changed.get_connections():
 		name_changed.disconnect(con["callable"])
-	
-	for con in send_message.get_connections():
-		send_message.disconnect(con["callable"])
+
 	
 	name_edit.text = device
 	ports_edit.text = str(n_ports)
@@ -46,7 +44,14 @@ func update_inspector(device: String, n_ports: int, mac_address: String, can_sen
 	can_send = can_send_messages
 	
 	interaction_container.visible = can_send
+	
+	target_edit.clear()
+	message_edit.clear()
 
 
 func _on_name_edit_text_changed(new_text: String) -> void:
 	name_changed.emit(new_text)
+
+
+func _on_paste_mac_pressed() -> void:
+	target_edit.text = DisplayServer.clipboard_get()

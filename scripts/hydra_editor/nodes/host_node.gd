@@ -5,6 +5,4 @@ func _ready() -> void:
 
 func build_inspector(inspector:Inspector):
 	inspector.update_inspector(name_edit.text, n_ports, mac_address, true)
-	inspector.name_changed.connect(update_name)
-	# inspector.send_message.connect()
-	
+	inspector.name_changed.connect(update_name)	

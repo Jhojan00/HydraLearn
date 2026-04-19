@@ -1,7 +1,14 @@
 extends Line2D
 class_name LineView
 
+@onready var message_path: Path2D = $MessagePath
+@onready var follow_message: PathFollow2D = $MessagePath/FollowMessage
+
+var curve := Curve2D.new()
+var send_tween: Tween
+
 signal deleted(line:LineView)
+signal anim_finished
 
 func _ready() -> void:
 	antialiased = true
@@ -24,5 +31,36 @@ func _input(event: InputEvent) -> void:
 				
 func line_clicked():
 	if State.get_mode() == State.MODES.DELETE:
-		print("AAAAA")
 		deleted.emit(self)
+
+func clean():
+	curve.clear_points()
+	clear_points()
+	
+	message_path.curve = curve
+	
+	sync_position()
+
+func add_curve_point(pos: Vector2):
+	curve.add_point(pos)
+	
+func sync_position():
+	points = curve.get_baked_points()
+	message_path.curve = curve
+	
+func start_sending(start: float = 0.0, end: float = 1.0):	
+	message_path.show()
+	
+	follow_message.progress_ratio = start
+	
+	send_tween = get_tree().create_tween()
+	await send_tween.tween_property(
+		follow_message,
+		"progress_ratio",
+		end,
+		2
+		).finished
+	
+	message_path.hide()
+	
+	anim_finished.emit()

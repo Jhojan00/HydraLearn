@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://oyup6pbmg7h5" path="res://scripts/hydra_editor/inspector.gd" id="1_cpv14"]
 [ext_resource type="Texture2D" uid="uid://dx4q6ttug6huf" path="res://assets/icons/kenny_icons/cards_stack.svg" id="2_ohdbj"]
+[ext_resource type="Texture2D" uid="uid://5hvrttdk7b1f" path="res://assets/icons/kenny_icons/card_outline_place.svg" id="3_60nab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu0xh"]
 content_margin_left = 0.0
@@ -50,6 +51,7 @@ offset_bottom = 240.0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_eu0xh")
 script = ExtResource("1_cpv14")
+metadata/_edit_group_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2032849638]
 layout_mode = 2
@@ -158,6 +160,30 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Interaction"
 
+[node name="Target" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer" unique_id=1070294148]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Target" unique_id=1184174802]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Target:"
+
+[node name="TargetEdit" type="LineEdit" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Target" unique_id=1658618488]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "Target Mac address"
+alignment = 1
+max_length = 30
+
+[node name="PasteMac" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Target" unique_id=477874280]
+custom_minimum_size = Vector2(30, 12)
+layout_mode = 2
+icon = ExtResource("3_60nab")
+icon_alignment = 1
+expand_icon = true
+
 [node name="Message" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer" unique_id=487817870]
 layout_mode = 2
 
@@ -175,23 +201,6 @@ placeholder_text = "A cool message"
 alignment = 1
 max_length = 20
 
-[node name="Target" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer" unique_id=1070294148]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Target" unique_id=1184174802]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Target:"
-
-[node name="TargetEdit" type="LineEdit" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Target" unique_id=1658618488]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-placeholder_text = "Target MAc address"
-alignment = 1
-max_length = 30
-
 [node name="Send" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer" unique_id=1613687716]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -207,4 +216,5 @@ text = "Fill all the fields!"
 
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/Info/Name/NameEdit" to="." method="_on_name_edit_text_changed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Info/MacAddress/CopyMac" to="." method="_on_copy_mac_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Target/PasteMac" to="." method="_on_paste_mac_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/InteractionContainer/Send" to="." method="_on_send_pressed"]

@@ -7,8 +7,10 @@ func flooding(packet:Packet, port:Port):
 	for p in ports:
 		if p != port:
 			p.send_packet(packet)
+			
 
-func receive_packet(packet:Packet, port:Port):
+func receive_packet(packet:Packet, port:Port, _from_mac: String):
+	packet_arrived.emit(_from_mac, mac_address)
 	cam_table[packet.origin] = port
 	
 	if packet.destination == "broadcast":

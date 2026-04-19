@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://5cfjrugl5gdc" path="res://scripts/ui/back_button.gd" id="6_wd34e"]
 [ext_resource type="Theme" uid="uid://dv2e6pm07a001" path="res://style/hydra_theme.tres" id="7_eu0xh"]
 [ext_resource type="PackedScene" uid="uid://b4vwax61gmrcl" path="res://scenes/hydra_editor/inspector.tscn" id="8_vlq07"]
+[ext_resource type="Script" uid="uid://ew6adf5hsc8e" path="res://scripts/networking_logic/network_handler.gd" id="9_g6jgc"]
+[ext_resource type="Theme" uid="uid://ys56uvxpnx5r" path="res://style/dialog.tres" id="10_dqskw"]
 
 [node name="HydraEditor" type="GraphEdit" unique_id=1601678525]
 anchors_preset = 15
@@ -98,6 +100,20 @@ offset_bottom = 155.0
 grow_horizontal = 0
 grow_vertical = 2
 
+[node name="NetworkHandler" type="Node" parent="." unique_id=2066465785]
+script = ExtResource("9_g6jgc")
+metadata/_custom_type_script = "uid://ew6adf5hsc8e"
+
+[node name="ArrivedDialog" type="AcceptDialog" parent="." unique_id=1824587390]
+oversampling_override = 1.0
+title = "Packet Arrived"
+initial_position = 1
+size = Vector2i(232, 170)
+theme = ExtResource("10_dqskw")
+
 [connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]
 [connection signal="node_deselected" from="." to="." method="_on_node_deselected"]
 [connection signal="node_selected" from="." to="." method="_on_node_selected"]
+[connection signal="send_message" from="Inspector" to="." method="_on_inspector_send_message"]
+[connection signal="packet_arrived_device" from="NetworkHandler" to="." method="_on_network_handler_packet_arrived_device"]
+[connection signal="packet_recieved" from="NetworkHandler" to="." method="_on_network_handler_packet_recieved"]

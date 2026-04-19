@@ -24,14 +24,16 @@ func start_sending():
 	while waiting_queue:
 		var request = waiting_queue.pop_front()
 		var from_port: Port = request["from_port"]
-		var packet: Packet = request["packet"].duplicate()
+		var packet: Packet = request["packet"]
 		var target_port: Port = null
 		
-		await get_tree().create_timer(latency).timeout
+		await Engine.get_main_loop().create_timer(latency).timeout
 		
 		
 		if randf() < loss_probability:
 			packet_lost.emit(packet)
+			print("Packet lost by probability.")
+
 			
 		elif from_port == port_a:
 			target_port = port_b
@@ -46,7 +48,8 @@ func start_sending():
 			packet.ttl -= 1
 			if packet.ttl <= 0:
 				packet_lost.emit(packet)
+				push_warning("Packet lost by ttl.")
 			else:
-				target_port.receive_packet(packet)
+				target_port.receive_packet(packet, from_port.owner_mac)
 				packet_sent.emit(packet)
 	waiting = false
