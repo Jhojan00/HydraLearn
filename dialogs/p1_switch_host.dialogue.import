@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxh3gv7dl1v30"
+path="res://.godot/imported/p1_switch_host.dialogue-8134ed08a7ab373554dfdd4ec42c8aba.tres"
+
+[deps]
+
+source_file="res://dialogs/p1_switch_host.dialogue"
+dest_files=["res://.godot/imported/p1_switch_host.dialogue-8134ed08a7ab373554dfdd4ec42c8aba.tres"]
+
+[params]
+
+defaults=true

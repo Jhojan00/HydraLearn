@@ -28,9 +28,9 @@ script = ExtResource("1_or1uj")
 [node name="Devices" parent="." unique_id=270969969 instance=ExtResource("2_psjx7")]
 z_index = 1
 layout_mode = 1
-offset_top = 174.0
+offset_top = 334.0
 offset_right = 126.0
-offset_bottom = -174.0
+offset_bottom = -334.0
 
 [node name="Tools" parent="." unique_id=912111584 instance=ExtResource("3_uwwce")]
 z_index = 1
@@ -46,16 +46,13 @@ grow_horizontal = 0
 [node name="Back" parent="." unique_id=1477110048 instance=ExtResource("4_e4njx")]
 modulate = Color(0.12225223, 0.12225223, 0.12225223, 1)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -95.0
-offset_top = -91.0
-offset_right = -47.0
-offset_bottom = -43.0
-grow_horizontal = 0
+offset_left = 47.0
+offset_top = -98.0
+offset_right = 95.0
+offset_bottom = -50.0
 grow_vertical = 0
 texture_normal = ExtResource("5_wd34e")
 script = ExtResource("6_wd34e")

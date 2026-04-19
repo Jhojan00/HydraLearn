@@ -2,6 +2,45 @@
 
 [ext_resource type="Script" uid="uid://lssewmce2q1" path="res://scripts/levels/level_1.gd" id="1_ksju7"]
 [ext_resource type="PackedScene" uid="uid://dus2x7j04b5qn" path="res://scenes/levels/hydra_editor_level.tscn" id="2_6iamk"]
+[ext_resource type="PackedScene" uid="uid://tmdhu63uvh4r" path="res://ui/hidra_icon_button.tscn" id="4_6761a"]
+[ext_resource type="Texture2D" uid="uid://b41h7s5s1mr3j" path="res://assets/ui/kenny_ui_pack/PNG/Red/Double/arrow_decorative_e_small.png" id="5_sk5k4"]
+[ext_resource type="Texture2D" uid="uid://ce7vx0cjq7p03" path="res://assets/ui/kenny_ui_pack/PNG/Grey/Double/arrow_decorative_e_small.png" id="6_sk5k4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu0xh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlq07"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(0, 1)
 
 [node name="Level1" type="Control" unique_id=37371610]
 layout_mode = 3
@@ -14,3 +53,141 @@ script = ExtResource("1_ksju7")
 
 [node name="HydraEditorLevel" parent="." unique_id=1601678525 instance=ExtResource("2_6iamk")]
 layout_mode = 1
+
+[node name="Tutorial" type="PanelContainer" parent="." unique_id=18405369]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -381.0
+offset_top = -286.0
+offset_right = -33.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eu0xh")
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial" unique_id=2032849638]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="Tutorial/MarginContainer" unique_id=1026776024]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlq07")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial/MarginContainer/PanelContainer" unique_id=516956669]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Part1" type="HBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer" unique_id=1694457979]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part1" unique_id=1851297348]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K_LEVEL_SWITCH_AND_HOST"
+
+[node name="Part1" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part1" unique_id=1477110048 instance=ExtResource("4_6761a")]
+custom_minimum_size = Vector2(21.785, 26.415)
+layout_mode = 2
+texture_normal = ExtResource("5_sk5k4")
+texture_pressed = ExtResource("6_sk5k4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Part2" type="HBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer" unique_id=1110136175]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part2" unique_id=1161077394]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K_LEVEL_CONNECTIONS"
+
+[node name="Part2" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part2" unique_id=98325320 instance=ExtResource("4_6761a")]
+custom_minimum_size = Vector2(21.785, 26.415)
+layout_mode = 2
+texture_normal = ExtResource("5_sk5k4")
+texture_pressed = ExtResource("6_sk5k4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Part3" type="HBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer" unique_id=2078944517]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part3" unique_id=127960761]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K_LEVEL_INSPECTOR"
+
+[node name="Part3" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part3" unique_id=320041969 instance=ExtResource("4_6761a")]
+custom_minimum_size = Vector2(21.785, 26.415)
+layout_mode = 2
+texture_normal = ExtResource("5_sk5k4")
+texture_pressed = ExtResource("6_sk5k4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Part4" type="HBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer" unique_id=1281743014]
+layout_mode = 2
+
+[node name="Part4" type="Label" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part4" unique_id=2021639446]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K_LEVEL_TOOLBAR"
+
+[node name="HidraIconButton" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part4" unique_id=1120229461 instance=ExtResource("4_6761a")]
+custom_minimum_size = Vector2(21.785, 26.415)
+layout_mode = 2
+texture_normal = ExtResource("5_sk5k4")
+texture_pressed = ExtResource("6_sk5k4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Part5" type="HBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer" unique_id=827399293]
+layout_mode = 2
+
+[node name="Part5" type="Label" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part5" unique_id=360017609]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K_LEVEL_SEND_PACKETS"
+
+[node name="HidraIconButton" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part5" unique_id=875520162 instance=ExtResource("4_6761a")]
+custom_minimum_size = Vector2(21.785, 26.415)
+layout_mode = 2
+texture_normal = ExtResource("5_sk5k4")
+texture_pressed = ExtResource("6_sk5k4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Part6" type="HBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer" unique_id=547368776]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part6" unique_id=223571624]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "K_LEVEL_FINISH"
+
+[node name="Part6" parent="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part6" unique_id=1671848189 instance=ExtResource("4_6761a")]
+custom_minimum_size = Vector2(21.785, 26.415)
+layout_mode = 2
+texture_normal = ExtResource("5_sk5k4")
+texture_pressed = ExtResource("6_sk5k4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part1/Part1" to="." method="_play_dialog" binds= [0]]
+[connection signal="pressed" from="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part2/Part2" to="." method="_play_dialog" binds= [1]]
+[connection signal="pressed" from="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part3/Part3" to="." method="_play_dialog" binds= [2]]
+[connection signal="pressed" from="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part4/HidraIconButton" to="." method="_play_dialog" binds= [3]]
+[connection signal="pressed" from="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part5/HidraIconButton" to="." method="_play_dialog" binds= [4]]
+[connection signal="pressed" from="Tutorial/MarginContainer/PanelContainer/VBoxContainer/Part6/Part6" to="." method="_play_dialog" binds= [5]]

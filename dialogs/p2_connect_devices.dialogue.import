@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c6gc0om6v4p6q"
+path="res://.godot/imported/p2_connect_devices.dialogue-2098195f0bdcc3cab83a4facad1d77b9.tres"
+
+[deps]
+
+source_file="res://dialogs/p2_connect_devices.dialogue"
+dest_files=["res://.godot/imported/p2_connect_devices.dialogue-2098195f0bdcc3cab83a4facad1d77b9.tres"]
+
+[params]
+
+defaults=true

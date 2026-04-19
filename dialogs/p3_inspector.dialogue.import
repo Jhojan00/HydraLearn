@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cwcawomktam8s"
+path="res://.godot/imported/p3_inspector.dialogue-bd3826352f3cce3762fddd1aa7fe7329.tres"
+
+[deps]
+
+source_file="res://dialogs/p3_inspector.dialogue"
+dest_files=["res://.godot/imported/p3_inspector.dialogue-bd3826352f3cce3762fddd1aa7fe7329.tres"]
+
+[params]
+
+defaults=true

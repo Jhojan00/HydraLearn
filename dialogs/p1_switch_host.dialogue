@@ -1,0 +1,23 @@
+~ devices_intro
+HydraBot: Alright, let’s take a look at your workspace. [ID:C52675_0768C5]
+HydraBot: On the right side, you’ll see a panel where you can drag different devices into the scene. [ID:C52675_ACAE23]
+
+HydraBot: For now, you have access to two of them. [ID:C52675_D30AE3]
+
+HydraBot: The first one is a PC. [ID:C52675_92B1A2]
+HydraBot: In simple terms, it’s responsible for sending and receiving messages across the network. [ID:C52675_272AAA]
+
+HydraBot: The second one is a switch. [ID:C52675_A3EF40]
+HydraBot: It acts like a smart repeater, forwarding data between devices so they can communicate efficiently. [ID:C52675_001288]
+
+HydraBot: Try dragging them into the workspace and see what happens. [ID:C52675_8D7702]
+
+- Got it! [ID:C52675_40B232]
+	HydraBot: Great. Go ahead and place your first devices. [ID:C52675_654818]
+	=> END
+- Explain again [ID:C52675_4F8D95]
+	HydraBot: On the right panel, drag a PC and a switch into the scene. [ID:C52675_039F2A]
+	HydraBot: The PC sends and receives messages, and the switch helps connect devices by forwarding data. [ID:C52675_CC10BE]
+	- Okay, now I understand [ID:C52675_FFDB83]
+		HydraBot: Perfect. Give it a try. [ID:C52675_40700A]
+		=> END

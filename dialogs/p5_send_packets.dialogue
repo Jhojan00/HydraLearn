@@ -1,0 +1,28 @@
+~ first_mission
+HydraBot: Mission time. [ID:1CE566_B62EAC]
+HydraBot: Your goal is to send your first packet. [ID:1CE566_A76336]
+
+HydraBot: To do this, you’ll need two computers and at least one switch. [ID:1CE566_216D82]
+HydraBot: First, connect one computer to the switch. [ID:1CE566_BF64E5]
+HydraBot: Then, connect the switch to the second computer. [ID:1CE566_2A6FEA]
+
+HydraBot: Now, select the target computer. [ID:1CE566_CEB1FF]
+HydraBot: In the inspector, copy its MAC address using the copy button. [ID:1CE566_BA7C0F]
+
+HydraBot: Next, go back to the first computer. [ID:1CE566_277D5A]
+HydraBot: Open its interaction panel and create a message. [ID:1CE566_9BAC2C]
+
+HydraBot: Paste the MAC address there and send it. [ID:1CE566_538C3C]
+
+HydraBot: If everything is set up correctly, you’ll see the packet travel through the network. [ID:1CE566_FB20E5]
+
+- Done! [ID:1CE566_4FF73B]
+	HydraBot: Excellent work. You’ve just sent your first packet. [ID:1CE566_E6A804]
+	=> END
+- I need help [ID:1CE566_0FD948]
+	HydraBot: Connect PC → Switch → PC. [ID:1CE566_4BA1F9]
+	HydraBot: Copy the MAC address from the target PC. [ID:1CE566_524DA8]
+	HydraBot: Paste it into the sender PC and send the message. [ID:1CE566_0D3C5E]
+	- Got it now [ID:1CE566_124C09]
+		HydraBot: Perfect. Give it another try. [ID:1CE566_4B6EA1]
+		=> END

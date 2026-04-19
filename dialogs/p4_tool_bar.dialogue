@@ -1,0 +1,24 @@
+~ toolbar_intro
+HydraBot: Let’s take a look at the toolbar at the top of your screen. [ID:F5F699_226861]
+HydraBot: This is where you can switch between different modes. [ID:F5F699_8EB92B]
+
+HydraBot: You have a normal mode and a delete mode. [ID:F5F699_907B9F]
+HydraBot: In delete mode, you can remove connections and devices just by selecting them. [ID:F5F699_9B5AB6]
+
+HydraBot: Be careful though — it’s easy to delete things by accident. [ID:F5F699_F7F156]
+
+HydraBot: To go back to normal mode, simply select the cursor icon. [ID:F5F699_4D71FD]
+HydraBot: And if you want to delete again, select the X icon. [ID:F5F699_56E1C4]
+
+HydraBot: Try switching between modes to get familiar with it. [ID:F5F699_5A7613]
+
+- Got it! [ID:F5F699_CA37D8]
+	HydraBot: Good. Control over your tools makes everything easier. [ID:F5F699_D3BAD3]
+	=> END
+- Explain again [ID:F5F699_FC24BE]
+	HydraBot: Use the toolbar at the top. [ID:F5F699_5E620A]
+	HydraBot: Cursor = normal mode. X = delete mode. [ID:F5F699_909066]
+	HydraBot: Delete mode removes devices and connections when you click them. [ID:F5F699_2F229C]
+	- Okay, understood [ID:F5F699_03B56B]
+		HydraBot: Perfect. Use it wisely. [ID:F5F699_5E930B]
+		=> END

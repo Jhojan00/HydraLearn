@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ci67gwclmf67y"
+path="res://.godot/imported/p4_tool_bar.dialogue-7a7838a06cb3ad1340c37aafa11e2913.tres"
+
+[deps]
+
+source_file="res://dialogs/p4_tool_bar.dialogue"
+dest_files=["res://.godot/imported/p4_tool_bar.dialogue-7a7838a06cb3ad1340c37aafa11e2913.tres"]
+
+[params]
+
+defaults=true

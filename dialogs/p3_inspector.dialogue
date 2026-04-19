@@ -1,0 +1,25 @@
+~ inspector_intro
+HydraBot: Great progress so far. Now let’s explore the inspector. [ID:D3A281_921842]
+HydraBot: When you select a single device, take a look at the panel on the right. [ID:D3A281_45133C]
+
+HydraBot: That’s the inspector. [ID:D3A281_70C87E]
+HydraBot: It shows useful information like the device name, its MAC address, and the number of ports. [ID:D3A281_402E25]
+
+HydraBot: If you select a switch, you’ll notice something interesting. [ID:D3A281_6FAC77]
+HydraBot: It doesn’t have interaction options. [ID:D3A281_C183C5]
+
+HydraBot: That’s because a switch doesn’t send messages like a computer does. [ID:D3A281_5AE1D1]
+HydraBot: Instead, it quietly forwards data between devices. [ID:D3A281_F5315C]
+
+HydraBot: Go ahead and click on different devices and observe how the inspector changes. [ID:D3A281_B367A0]
+
+- Got it! [ID:D3A281_5D2E5B]
+	HydraBot: Nice. Understanding your tools is key. [ID:D3A281_ED31B5]
+	=> END
+- Explain again [ID:D3A281_95850C]
+	HydraBot: Select a device and check the right panel. [ID:D3A281_3D6EEB]
+	HydraBot: You’ll see its name, MAC address, and ports. [ID:D3A281_D2647B]
+	HydraBot: PCs can interact, but switches only forward data. [ID:D3A281_B1D85F]
+	- Okay, now I see it [ID:D3A281_F0E716]
+		HydraBot: Perfect. Keep exploring. [ID:D3A281_E1E18E]
+		=> END

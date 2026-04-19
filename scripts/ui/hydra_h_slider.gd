@@ -2,8 +2,8 @@ extends HSlider
 @onready var moved: AudioStreamPlayer = $Moved
 
 
-func _on_drag_ended(value_changed: bool) -> void:
-	if value_changed:
+func _on_drag_ended(_value_changed: bool) -> void:
+	if _value_changed:
 		moved.play()
 
 

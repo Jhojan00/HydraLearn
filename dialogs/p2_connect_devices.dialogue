@@ -1,0 +1,16 @@
+~ connect_devices
+HydraBot: Well done! Now let’s connect them. [ID:6FA629_FFFE5C]
+HydraBot: Try dragging from one of the white points on the PC to the switch. [ID:6FA629_5A83FD]
+HydraBot: Click, drag, and release on the other white point. [ID:6FA629_D9759D]
+
+HydraBot: That’s how you’ll create your first connection. [ID:6FA629_A87787]
+
+- Done! [ID:6FA629_75E45A]
+	HydraBot: Nice work. You’re starting to think like a network engineer. [ID:6FA629_CBC71E]
+	=> END
+- I need help [ID:6FA629_71C7F6]
+	HydraBot: Look for the small white points on each device. [ID:6FA629_8E001F]
+	HydraBot: Click on one from the PC, drag it to the switch, and release it on its white point. [ID:6FA629_3DFE23]
+	- Got it now [ID:6FA629_2BE6B5]
+		HydraBot: Perfect. Go ahead and connect them. [ID:6FA629_567DD2]
+		=> END

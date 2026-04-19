@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cg07p5umtpyt2"
+path="res://.godot/imported/p5_send_packets.dialogue-15160771769d6be1e6bae8bc5f2f687f.tres"
+
+[deps]
+
+source_file="res://dialogs/p5_send_packets.dialogue"
+dest_files=["res://.godot/imported/p5_send_packets.dialogue-15160771769d6be1e6bae8bc5f2f687f.tres"]
+
+[params]
+
+defaults=true

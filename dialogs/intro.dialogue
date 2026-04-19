@@ -1,0 +1,27 @@
+~ start
+HydraBot: [[Hi|Hello|Hey there|Welcome]], and welcome to HydraLearn! [ID:D6DE25_6FA772]
+HydraBot: I’m HydraBot, your guide on this journey into the world of networks. [ID:D6DE25_165D89]
+HydraBot: Here, you'll learn the fundamentals — how systems connect, communicate, and exchange information behind the scenes. [ID:D6DE25_9C5EDE]
+HydraBot: Sounds complex? Don’t worry… we’ll break it down step by step. [ID:D6DE25_3DF7DB]
+
+HydraBot: But here’s where things get really interesting. [ID:D6DE25_0763BE]
+HydraBot: You won’t just learn theory — you’ll *build* and *experiment*. [ID:D6DE25_2EF7B2]
+
+HydraBot: Inside HydraLearn, you’ll use the Hydra Editor — the place where the magic happens. [ID:D6DE25_B92478]
+HydraBot: It’s where you’ll design, test, and truly understand how networks behave in action. [ID:D6DE25_55FA98]
+
+HydraBot: Think of it as your personal lab. [ID:D6DE25_EA7300]
+HydraBot: Safe, interactive, and powerful. [ID:D6DE25_596D8C]
+
+HydraBot: Ready to get started? [ID:D6DE25_64A3FC]
+
+- Let’s begin! [ID:D6DE25_5D4258]
+	HydraBot: That’s the spirit. Let’s dive in. [ID:D6DE25_4BE500]
+	=> END
+- Tell me more first [ID:D6DE25_3C25C3]
+	HydraBot: You’ll learn how hosts communicate, how switches forward data, and how MAC addresses identify devices inside a network. [ID:D6DE25_390D7B]
+	HydraBot: You’ll also explore how data flows from one point to another and what really happens behind every connection. [ID:D6DE25_CC27B9]
+	HydraBot: Take your time, experiment, and don’t be afraid to make mistakes. That’s how real learning happens. [ID:D6DE25_9C952B]
+	- Now I’m ready [ID:D6DE25_259E97]
+		HydraBot: Perfect. Let’s begin. [ID:D6DE25_31D095]
+		=> END
