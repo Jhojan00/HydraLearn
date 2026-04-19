@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bp5rqfllau2l3"]
 
 [ext_resource type="Script" uid="uid://lssewmce2q1" path="res://scripts/levels/level_1.gd" id="1_ksju7"]
+[ext_resource type="PackedScene" uid="uid://dus2x7j04b5qn" path="res://scenes/levels/hydra_editor_level.tscn" id="2_6iamk"]
 
 [node name="Level1" type="Control" unique_id=37371610]
 layout_mode = 3
@@ -11,12 +12,5 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ksju7")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1084821892]
+[node name="HydraEditorLevel" parent="." unique_id=1601678525 instance=ExtResource("2_6iamk")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.85490197, 0.8627451, 0.90588236, 1)
-metadata/_edit_lock_ = true

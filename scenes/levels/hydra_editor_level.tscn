@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dus2x7j04b5qn"]
+
+[ext_resource type="PackedScene" uid="uid://bon1xju6xr8s7" path="res://scenes/hydra_editor/hydra_editor.tscn" id="1_x7y8o"]
+
+[node name="HydraEditorLevel" unique_id=1601678525 instance=ExtResource("1_x7y8o")]
+
+[node name="Label" parent="." index="4" unique_id=755290457]
+text = "Hydra LEARN"

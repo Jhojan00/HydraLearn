@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dirkk1djkdiwx"]
 
 [ext_resource type="PackedScene" uid="uid://capern0ng722p" path="res://scenes/hydra_editor/nodes/base_node.tscn" id="1_83wqs"]
+[ext_resource type="Script" uid="uid://c0ss30uv1bvxb" path="res://scripts/hydra_editor/nodes/switch_node.gd" id="2_cc0js"]
 [ext_resource type="Texture2D" uid="uid://bwkse3cahtnjb" path="res://assets/icons/cute_icons/drive-01.png" id="2_vvkat"]
 
 [node name="SwitchNode" unique_id=441519130 instance=ExtResource("1_83wqs")]
+script = ExtResource("2_cc0js")
 n_ports = 6
 
-[node name="LineEdit" parent="BG/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(202349173) index="0" unique_id=1734115117]
+[node name="NameEdit" parent="BG/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(202349173) index="0" unique_id=1734115117]
 text = "Switch"
 placeholder_text = "Name"
 

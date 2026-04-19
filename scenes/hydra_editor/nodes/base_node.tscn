@@ -39,11 +39,13 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="LineEdit" type="LineEdit" parent="BG/MarginContainer/VBoxContainer" unique_id=1734115117]
+[node name="NameEdit" type="LineEdit" parent="BG/MarginContainer/VBoxContainer" unique_id=1734115117]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "CustomName"
 alignment = 1
 max_length = 20
+editable = false
 
 [node name="TextureRect" type="TextureRect" parent="BG/MarginContainer/VBoxContainer" unique_id=1643970240]
 custom_minimum_size = Vector2(150, 150)

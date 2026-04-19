@@ -11,6 +11,7 @@ class_name BaseNode
 
 @onready var bg: PanelContainer = $BG
 @onready var ports_container: HBoxContainer = %PortsContainer
+@onready var name_edit: LineEdit = %NameEdit
 
 const PORT_VIEW = preload("uid://puy3jo5a3n6q")
 
@@ -83,3 +84,10 @@ func create_mac_address() -> String:
 
 func connection_started(from: BaseNode, from_port: int, to: BaseNode, to_port: int):
 	port_connected.emit(from, from_port, to, to_port)
+
+func update_name(new_name: String):
+	name_edit.text = new_name	
+
+func build_inspector(inspector:Inspector):
+	pass
+	

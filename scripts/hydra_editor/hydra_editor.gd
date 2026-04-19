@@ -1,12 +1,12 @@
 extends GraphEdit
 
 @onready var connection_layer = get_node("_connection_layer")
+@onready var inspector: Inspector = $Inspector
 
 const LINE = preload("uid://dkqfa3fjaohj7")
 
 var last_zoom := zoom
 var network_handler := NetworkHandler.new()
-
 var devices: Dictionary[String, BaseNode]
 var ui_connections: Array = []
 
@@ -16,7 +16,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if zoom != last_zoom:
 		_update_lines_zoom()
-		
+	
+
+#region Lines
+
 func _update_lines_zoom():
 	connection_layer.scale = Vector2(zoom, zoom)
 	last_zoom = zoom	
@@ -44,13 +47,32 @@ func _update_line(data):
 func _on_node_moved():
 	for con in ui_connections:
 		_update_line(con)
-			
-func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	return data["type"] == "device" and data.has("node_path")
-	
-func _drop_data(at_position: Vector2, data: Variant) -> void:
-	add_device(at_position, data)
 
+func remove_connection_by_line(line: LineView) -> void:
+	for i in range(ui_connections.size() - 1, -1, -1):
+		var con = ui_connections[i]
+		
+		if con["line"] == line:
+			
+			network_handler.remove_connection(
+				con["from_node"].mac_address,
+				con["from_port"]
+			)
+			
+			var from_node = con["from_node"]
+			var to_node = con["to_node"]
+
+			if is_instance_valid(from_node):
+				from_node.set_port_status(con["from_port"], false)
+
+			if is_instance_valid(to_node):
+				to_node.set_port_status(con["to_port"], false)
+
+			if is_instance_valid(line):
+				line.queue_free()
+
+			ui_connections.remove_at(i)
+			return
 
 func add_connection(from: BaseNode, from_port: int, to: BaseNode, to_port: int):
 	var line = LINE.instantiate() as LineView
@@ -84,6 +106,9 @@ func add_connection(from: BaseNode, from_port: int, to: BaseNode, to_port: int):
 	from.set_port_status(from_port, true, color)
 	to.set_port_status(to_port, true, color)
 
+#endregion Lines
+
+#region Devices
 
 func remove_connection_by_device(device: BaseNode):
 	for i in range(ui_connections.size() - 1, -1, -1):
@@ -111,31 +136,6 @@ func remove_connection_by_device(device: BaseNode):
 				con["line"].queue_free()
 				ui_connections.remove_at(i)
 
-func remove_connection_by_line(line: LineView) -> void:
-	for i in range(ui_connections.size() - 1, -1, -1):
-		var con = ui_connections[i]
-		
-		if con["line"] == line:
-			
-			network_handler.remove_connection(
-				con["from_node"].mac_address,
-				con["from_port"]
-			)
-			
-			var from_node = con["from_node"]
-			var to_node = con["to_node"]
-
-			if is_instance_valid(from_node):
-				from_node.set_port_status(con["from_port"], false)
-
-			if is_instance_valid(to_node):
-				to_node.set_port_status(con["to_port"], false)
-
-			if is_instance_valid(line):
-				line.queue_free()
-
-			ui_connections.remove_at(i)
-			return
 
 func add_device(at_position: Vector2, data: Dictionary):
 	var scene = load(data["node_path"])
@@ -157,11 +157,35 @@ func remove_device(device: BaseNode):
 	network_handler.remove_device(device.mac_address)
 	devices.erase(device.mac_address)
 	device.queue_free()
-	
-	
 
+#endregion Devices
+
+#region Interaction
+
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	return data["type"] == "device" and data.has("node_path")
+	
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	add_device(at_position, data)
 
 func _on_delete_nodes_request(nodes: Array[StringName]) -> void:
 	for node in get_children():
 		if node.name in nodes:
 			remove_device(node)
+
+
+func _on_node_selected(node: Node) -> void:
+	if State.get_mode() != State.MODES.DELETE:
+		node = node as BaseNode
+
+		for n in devices.values():
+			if n.selected and node != n:
+				return
+		
+		inspector.show()
+		node.build_inspector(inspector)
+
+func _on_node_deselected(node: Node) -> void:
+	inspector.hide()
+
+#endregion Interaction
