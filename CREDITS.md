@@ -1,36 +1,57 @@
+## Assets & Credits
 
-## Characters
-Creator: Kenny
-Assets Name: Shape Characters
-URL: https://kenney.nl/assets/shape-characters
+### Characters
+- **Creator:** Kenney  
+- **Asset Pack:** Shape Characters  
+- **Link:** https://kenney.nl/assets/shape-characters  
 
-## Font and UI
-Creator: Kenny
-Assets Name: UI Pack
-URL: https://kenney.nl/assets/ui-pack
+---
 
-## UI sounds
-Creator: Kenny
-Assets Name: Interface Sounds
-URL: https://kenney.nl/assets/interface-sounds
+### UI & Typography
+- **Creator:** Kenney  
+- **Asset Pack:** UI Pack  
+- **Link:** https://kenney.nl/assets/ui-pack  
 
-## Flags
-Creator: Dafluffypotato
-Assets Name: Pixel Country Flags - 15x10
-URL: https://dafluffypotato.itch.io/pixel-country-flags
+---
 
-## Editor Icons
-Creator: Kenney
-Assets Name: Board Game Icons
-URL: https://www.kenney.nl/assets/board-game-icons
+### UI Sounds
+- **Creator:** Kenney  
+- **Asset Pack:** Interface Sounds  
+- **Link:** https://kenney.nl/assets/interface-sounds  
 
-## Mouse Icons
-Creator: Kenney
-Assets Name: Cursor Pack
-URL: https://www.kenney.nl/assets/cursor-pack
+---
 
-# Editor Icons (Devices)
+### Flags
+- **Creator:** DafluffyPotato  
+- **Asset Pack:** Pixel Country Flags (15x10)  
+- **Link:** https://dafluffypotato.itch.io/pixel-country-flags  
 
-Creator: Mayke Arth
-Assets Name: Cute Desktop Icons 32x32
-URL: https://mayke-arth.itch.io/cute-desktop-icons-32x32
+---
+
+### Editor Icons (Board / UI Elements)
+- **Creator:** Kenney  
+- **Asset Pack:** Board Game Icons  
+- **Link:** https://www.kenney.nl/assets/board-game-icons  
+
+---
+
+### Cursor Icons
+- **Creator:** Kenney  
+- **Asset Pack:** Cursor Pack  
+- **Link:** https://www.kenney.nl/assets/cursor-pack  
+
+---
+
+### Device Icons (Editor UI)
+- **Creator:** Mayke Arth  
+- **Asset Pack:** Cute Desktop Icons 32x32  
+- **Link:** https://mayke-arth.itch.io/cute-desktop-icons-32x32  
+
+---
+
+## Contributors
+
+With love by:
+
+- **Jhojan** — https://github.com/Jhojan00  
+- **Bastian Cardona** — https://github.com/BastianCardona  

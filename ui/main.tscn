@@ -79,6 +79,21 @@ face_texture = ExtResource("4_h17sc")
 hand_1_texture = ExtResource("5_04ebt")
 hand_2_texture = ExtResource("5_04ebt")
 
+[node name="Version" type="LinkButton" parent="." unique_id=418048817]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -34.0
+offset_right = 85.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.21950072, 0.21950108, 0.21950155, 1)
+text = "alpha"
+uri = "https://github.com/Jhojan00/HydraLearn"
+
 [connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
