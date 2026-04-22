@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://ddxoptif518mh"]
-
-[ext_resource type="Script" uid="uid://ew6adf5hsc8e" path="res://scripts/networking_logic/network_handler.gd" id="1_sy5k4"]
-
-[node name="Node" type="Node" unique_id=1700283727]
-script = ExtResource("1_sy5k4")
