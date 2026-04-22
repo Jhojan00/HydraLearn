@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HydraLearn"
-config/version="alpha_0.0.1"
+config/version="0.0.1"
 run/main_scene="uid://dchlm4wvis2f3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.85490197, 0.8627451, 0.90588236, 1)
