@@ -73,14 +73,27 @@ func add_connection(emisor_id: String, receptor_id: String, from_port_idx: int, 
 		push_warning("Id of device not found.")
 
 func remove_connection(device_id: String, port_idx: int):
-	if devices.get(device_id):
-		
-		var device = devices[device_id] as Device
-		var link = device.ports[port_idx].link
-		connections.remove_at(connections.find(link))
-
-	else:
+	if not devices.has(device_id):
 		push_warning("Id of device not found.")
+		return
+	
+	var device = devices[device_id] as Device
+	var port = device.ports[port_idx]
+	var link = port.link
+	
+	if link == null:
+		return
+	
+	var other_port = link.port_a if link.port_b == port else link.port_b
+	
+	port.link = null
+	
+	if other_port:
+		other_port.link = null
+	
+	var idx = connections.find(link)
+	if idx != -1:
+		connections.remove_at(idx)
 		
 func send_packet(origin_mac: String, destination_mac: String, data: String):
 	if not devices.has(origin_mac):
