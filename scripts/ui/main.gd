@@ -5,8 +5,6 @@ extends Control
 
 func _ready() -> void:
 	DisplayServer.window_set_min_size(Vector2i(640, 360))
-	
-	TranslationServer.set_locale("es")
 	version.text = ProjectSettings.get_setting("application/config/version")
 
 func _on_quit_pressed() -> void:
